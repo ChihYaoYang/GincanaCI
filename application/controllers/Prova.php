@@ -4,6 +4,7 @@ class Prova extends CI_Controller {
     public function index() {
         $this->listar();
     }
+    //Read
     public function listar() {
         //Carrega o model                  
         $this->load->model('Prova_model');
@@ -11,6 +12,12 @@ class Prova extends CI_Controller {
         $data['prova'] = $this->Prova_model->getAll();
         //Carrega view
         $this->load->view('ListaProva', $data);
+    }
+    //Create
+    public function cadastrar() {
+        //validar os campo se foram preenchido
+  
+        
     }
 }
 ?>
