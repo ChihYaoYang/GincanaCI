@@ -14,15 +14,30 @@
             <div class="row">
                 <div class="col">
                     <h3>Lista da Prova</h3>   
-                    <label for="nome">Nome:</label>
-                    <input type="text" class="form-control" id="nome" name="nome" value="">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Tempo</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Número de Integrantes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($prova as $dado) {
+                                echo '<tr>';
+                                echo '<td>' . $dado->nome . '</td>';
+                                echo '<td>' . $dado->tempo . '</td>';
+                                echo '<td>' . $dado->descricao . '</td>';
+                                echo '<td>' . $dado->NumIntegrantes . '</td>';
+                                echo '</tr>';
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
         </div>
-
-        <?php
-        // put your code here
-        ?>
     </body>
 </html>
