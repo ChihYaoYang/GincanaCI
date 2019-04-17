@@ -18,13 +18,14 @@
                     <h3>Formulário da Prova</h3>   
                     <!--Nome--->
                     <form method="POST" action="">
+                        <input type="hidden" name="id" id="id" value="<?php (isset($prova)) ? $prova->id : '' ?>">
                         <div>
                             <label for="nome">Nome:</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-user"></i></div>
                                 </div>
-                                <input type="text"class="form-control" id="nome"  name="nome">
+                                <input type="text"class="form-control" id="nome"  name="nome" value="<?php (isset($prova)) ? $prova->nome : '' ?>">
                             </div>
                         </div>
 
@@ -34,7 +35,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-clock"></i></div>
                                 </div>
-                                <input type="text"class="form-control" id="tempo"  name="tempo">
+                                <input type="text"class="form-control" id="tempo"  name="tempo" value="<?php (isset($prova)) ? $prova->tempo : '' ?>">
                             </div>
                         </div>        
 
@@ -44,7 +45,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-file-alt"></i></div>
                                 </div>
-                                <input type="text"class="form-control" id="descricao"  name="descricao">
+                                <input type="text"class="form-control" id="descricao"  name="descricao" value="<?php (isset($prova)) ? $prova->descricao : '' ?>">
                             </div>
                         </div>   
 
@@ -55,7 +56,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-users"></i></div>
                                 </div>
-                                <input type="text"class="form-control" id="NumIntegrantes"  name="NumIntegrantes">
+                                <input type="text"class="form-control" id="NumIntegrantes"  name="NumIntegrantes" value="<?php (isset($prova)) ? $prova->NumIntegrantes : '' ?>">
                             </div>
                         </div>  
 
