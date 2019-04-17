@@ -51,6 +51,17 @@ class Prova extends CI_Controller {
         }
     }
 
+    //Delete
+    public function deletar($id) {
+        //Valida
+        if ($id > 0) {
+            $this->load->model('Prova_model');
+            if($this->Prova_model->delete($id)) {
+                redirect('Prova/listar');
+            }
+        }
+    }
+    //UPDATE
+    
 }
-
 ?>

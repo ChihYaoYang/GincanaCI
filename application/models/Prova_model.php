@@ -15,5 +15,18 @@ class Prova_model extends CI_Model {
         $this->db->insert('prova', $data);
         return $this->db->affected_rows();
     }
+    //Delete
+    public function delete($id){
+        if($id > 0) {
+            //filtra o id que sera deletado
+            $this->db->where('id', $id);
+            //Deleta
+            $this->db->delete('prova');
+            return $this->db->affected_rows();
+        } else {
+            return false;
+        }
+    }
+    //Update GET_ID
 }
 ?>
