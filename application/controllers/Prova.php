@@ -45,7 +45,7 @@ class Prova extends CI_Controller {
                 //Se for true redireciona para lista
                 redirect('Prova/listar');
             } else {
-                //Se for true redireciona para cadastrar
+                //Se for false redireciona para cadastrar
                 redirect('Prova/cadastrar');
             }
         }

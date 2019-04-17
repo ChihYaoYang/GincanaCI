@@ -11,9 +11,9 @@ class Prova_model extends CI_Model {
         return $query->result();
     }
     //Create
-    public function insert() {
+    public function insert($data = array()) {
         $this->db->insert('prova', $data);
-        return $this->db->affected->rows();
+        return $this->db->affected_rows();
     }
 }
 ?>
