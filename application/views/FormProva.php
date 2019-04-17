@@ -18,6 +18,7 @@
                     <h3>Formulário da Prova</h3>   
                     <!--Nome--->
                     <form method="POST" action="">
+                                                                  <!--$data['prova'] controller-->
                         <input type="hidden" name="id" id="id" value="<?php (isset($prova)) ? $prova->id : '' ?>">
                         <div>
                             <label for="nome">Nome:</label>

@@ -73,9 +73,10 @@ class Prova extends CI_Controller {
             $this->form_validation->set_rules('NumIntegrantes', 'NumIntegrantes', 'required');
             //Se j[a foi preenchido
             if ($this->form_validation->run() == false) {
-                //Get id e redireciona para form
+                //Get id
                 $data['prova'] = $this->Prova_model->getId($id);
-                $this->load->view('FormProva');
+                //Chama view e passa $data
+                $this->load->view('FormProva', $data);
             } else {
                 //resgata dados
                 $data = array(
@@ -84,6 +85,7 @@ class Prova extends CI_Controller {
                     'descricao' => $this->input->post('descricao'),
                     'NumIntegrantes' => $this->input->post('NumIntegrantes'),
                 );
+                //Chama método de update
                 if($this->Prova_model->update($data, $id)){
                     redirect('Prova/listar');
                 }
