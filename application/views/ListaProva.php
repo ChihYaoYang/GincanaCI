@@ -34,8 +34,9 @@
                                 echo '<td>' . $dado->tempo . '</td>';
                                 echo '<td>' . $dado->descricao . '</td>';
                                 echo '<td>' . $dado->NumIntegrantes . '</td>';
+                                                                                                        //método
                                 echo '<td>' . '<a href="' . $this->config->base_url() . 'index.php/Prova/deletar/' . $dado->id . '" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>' .
-                                '<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $dado->id . '" class="btn btn-warning"><i class="fas fa-edit"></i> Alterar</a>'
+                                ' '.'<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $dado->id . '" class="btn btn-warning"><i class="fas fa-edit"></i> Alterar</a>'
                                 . '</td>';
                                 echo '</tr>';
                             }

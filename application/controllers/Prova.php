@@ -7,7 +7,6 @@ class Prova extends CI_Controller {
     public function index() {
         $this->listar();
     }
-
     //Read
     public function listar() {
         //Carrega o model                  
@@ -56,12 +55,40 @@ class Prova extends CI_Controller {
         //Valida
         if ($id > 0) {
             $this->load->model('Prova_model');
-            if($this->Prova_model->delete($id)) {
+            if ($this->Prova_model->delete($id)) {
                 redirect('Prova/listar');
             }
         }
     }
+
     //UPDATE
-    
+    public function alterar($id) {
+        if ($id > 0) {
+            //valida e carrega model
+            $this->load->model('Prova_model');
+            //Validation form
+            $this->form_validation->set_rules('nome', 'nome', 'required');
+            $this->form_validation->set_rules('tempo', 'tempo', 'required');
+            $this->form_validation->set_rules('descricao', 'descricao', 'required');
+            $this->form_validation->set_rules('NumIntegrantes', 'NumIntegrantes', 'required');
+            //Se j[a foi preenchido
+            if ($this->form_validation->run() == false) {
+                //Get id e redireciona para form
+                $data['prova'] = $this->Prova_model->getId($id);
+                $this->load->view('FormProva');
+            } else {
+                //resgata dados
+                $data = array(
+                    'nome' => $this->input->post('nome'),
+                    'tempo' => $this->input->post('tempo'),
+                    'descricao' => $this->input->post('descricao'),
+                    'NumIntegrantes' => $this->input->post('NumIntegrantes'),
+                );
+                if($this->Prova_model->update($data, $id)){
+                    redirect('Prova/listar');
+                }
+            }
+        }
+    }
 }
 ?>
