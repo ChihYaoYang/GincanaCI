@@ -86,10 +86,14 @@ class Prova extends CI_Controller {
                     'NumIntegrantes' => $this->input->post('NumIntegrantes'),
                 );
                 //Chama método de update
-                if($this->Prova_model->update($data, $id)){
+                if($this->Prova_model->update($id, $data)){
                     redirect('Prova/listar');
+                } else {
+                    redirect('Prova/alterar/' , $id);
                 }
             }
+        } else {
+            redirect('Prova/listar');
         }
     }
 }
