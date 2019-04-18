@@ -12,6 +12,12 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </head>
     <body>
+        <style>
+            button {
+                box-shadow: 0 4px 15px 0 rgba(13,44,200,1);
+            }
+        </style>
+
         <?php
         $mensagem = $this->session->flashdata('mensagem');
         if (isset($mensagem)) {
@@ -72,8 +78,8 @@
 
                                     <br>
                                     <div class="text-center">
-                                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enviar</button>
-                                    <button type="reset" class="btn btn-primary"><i class="fas fa-edit"></i> Limpar</button>
+                                        <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enviar</button>
+                                        <button type="reset" class="btn btn-primary"><i class="fas fa-edit"></i> Limpar</button>
                                     </div>
                                 </form>
                             </div>
