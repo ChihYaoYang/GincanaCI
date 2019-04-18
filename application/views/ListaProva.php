@@ -44,7 +44,7 @@
                     <?php
                     $mensagem = $this->session->flashdata('mensagem');
                     if (isset($mensagem)) {
-                        echo $mensagem;
+                        echo '<div class="alert alert-success"> <i class="fas fa-check"></i>' . $mensagem . '</div>';
                     }
                     ?>
                     <table class="table table-dark table-bordered">
