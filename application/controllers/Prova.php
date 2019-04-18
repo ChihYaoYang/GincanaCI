@@ -7,6 +7,7 @@ class Prova extends CI_Controller {
     public function index() {
         $this->listar();
     }
+
     //Read
     public function listar() {
         //Carrega o model                  
@@ -41,9 +42,15 @@ class Prova extends CI_Controller {
             );
             //Chama método e passa $data ja valida se teve linha affectados
             if ($this->Prova_model->insert($data)) {
+
+                //salva uma mensagem na sessão
+                $this->session->set_flashdata('mensagem', 'Prova cadastrado com sucesso! ! !');
                 //Se for true redireciona para lista
                 redirect('Prova/listar');
             } else {
+                //salva uma mensagem na sessão
+                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar Prova *_*');
+
                 //Se for false redireciona para cadastrar
                 redirect('Prova/cadastrar');
             }
@@ -56,9 +63,12 @@ class Prova extends CI_Controller {
         if ($id > 0) {
             $this->load->model('Prova_model');
             if ($this->Prova_model->delete($id)) {
-                redirect('Prova/listar');
+                $this->session->set_flashdata('mensagem', 'Prova deletado com sucesso ! ! !');
+            } else {
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar Prova *_*');
             }
         }
+        redirect('Prova/listar');
     }
 
     //UPDATE
@@ -86,15 +96,21 @@ class Prova extends CI_Controller {
                     'NumIntegrantes' => $this->input->post('NumIntegrantes'),
                 );
                 //Chama método de update
-                if($this->Prova_model->update($id, $data)){
+                if ($this->Prova_model->update($id, $data)) {
+                    $this->session->set_flashdata('mensagem', 'Prova alterado com sucesso ! ! !');
+
                     redirect('Prova/listar');
                 } else {
-                    redirect('Prova/alterar/' , $id);
+                    $this->session->set_flashdata('mensagem', 'Falha ao alterar Prova *_*');
+
+                    redirect('Prova/alterar/', $id);
                 }
             }
         } else {
             redirect('Prova/listar');
         }
     }
+
 }
+
 ?>
