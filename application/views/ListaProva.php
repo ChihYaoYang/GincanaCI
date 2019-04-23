@@ -71,7 +71,7 @@
                     }
                     $erro = $this->session->flashdata('erro');
                     if (isset($erro)) {
-                        echo '<div class="alert alert-danger" role="alert">' . $erro . '</div>';
+                        echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '</div>';
                 }
                     ?>
                     <table class="table table-dark table-bordered">

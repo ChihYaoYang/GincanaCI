@@ -29,6 +29,8 @@ class Prova extends CI_Controller {
         if ($this->form_validation->run() == false) {
             //Se for false chama Form de novo
             $this->load->view('FormProva');
+            //Mensagem
+            $this->session->set_flashdata('erro', 'Preencher todos os campos. *_*');
         } else {
             //se for true 
             //carrega model
