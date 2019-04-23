@@ -49,7 +49,7 @@ class Prova extends CI_Controller {
                 redirect('Prova/listar');
             } else {
                 //salva uma mensagem na sessão
-                $this->session->set_flashdata('mensagem', 'Erro ao cadastrar Prova *_*');
+                $this->session->set_flashdata('erro', 'Erro ao cadastrar Prova *_*');
 
                 //Se for false redireciona para cadastrar
                 redirect('Prova/cadastrar');
@@ -65,7 +65,7 @@ class Prova extends CI_Controller {
             if ($this->Prova_model->delete($id)) {
                 $this->session->set_flashdata('mensagem', 'Prova deletado com sucesso ! ! !');
             } else {
-                $this->session->set_flashdata('mensagem', 'Falha ao deletar Prova *_*');
+                $this->session->set_flashdata('erro', 'Falha ao deletar Prova *_*');
             }
         }
         redirect('Prova/listar');
@@ -101,7 +101,7 @@ class Prova extends CI_Controller {
 
                     redirect('Prova/listar');
                 } else {
-                    $this->session->set_flashdata('mensagem', 'Falha ao alterar Prova *_*');
+                    $this->session->set_flashdata('erro', 'Falha ao alterar Prova *_*');
 
                     redirect('Prova/alterar/', $id);
                 }
