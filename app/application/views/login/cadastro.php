@@ -32,7 +32,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                                 </div>
-                                <input type="text"class="form-control" name="email" id="email" value="">
+                                <input type="email"class="form-control" name="email" id="email" value="">
                             </div>
                         </div>
 
