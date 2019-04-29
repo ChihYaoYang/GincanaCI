@@ -54,13 +54,13 @@
                     <li class="nav-item dropdown">
                         <a href="#" id="menuCliente" class="nav-link dropdown-toggle" data-toggle="dropdown">Clientes</a>
                         <div class="dropdown-menu" aria-labelledby="menuCliente">
-                            <a href="<?= base_url() . 'index.php/Prova/index' ?>" class="dropdown-item">Listar</a>
-                            <a href="<?= base_url() . 'index.php/Prova/cadastrar' ?>" class="dropdown-item">Cadastrar</a>
+                            <a href="<?= base_url() . 'Prova/index' ?>" class="dropdown-item">Listar</a>
+                            <a href="<?= base_url() . 'Prova/cadastrar' ?>" class="dropdown-item">Cadastrar</a>
                         </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav justify-content-end">
-                    <li class="nav-item"><a class="nav-link text-light" href="<?= base_url().'index.php/Usuario/sair' ?>">
+                    <li class="nav-item"><a class="nav-link text-light" href="<?= base_url().'Usuario/sair' ?>">
                            Sair  <i class="fas fa-sign-out-alt"></i></a>
                     </li>
                 </ul>

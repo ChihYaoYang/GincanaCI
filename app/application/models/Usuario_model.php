@@ -31,7 +31,7 @@ class Usuario_model extends CI_Model {
         //verifica se o status está setado, ou não está true, ou não tem isUsuario
         if((!isset($logado)) || ($logado != TRUE) || ($idUsuaio <= 0)) {
             //redireciona obrigando o login...
-            redirect(base_url().'index.php/Usuario/login');
+            redirect(base_url().'Usuario/login');
         } 
     }
 }

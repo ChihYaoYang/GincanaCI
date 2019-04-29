@@ -20,7 +20,7 @@
                     <!---Card--->
                     <div class="card">
                         <h3 class="card-header bg-transparent"><i class="fas fa-arrow-left"></i> <a
-                                href=<?= base_url() . 'index.php/Prova/index' ?>>Back</a><br><i
+                                href=<?= base_url() . 'Prova/index' ?>>Back</a><br><i
                                 class="fas fa-edit"></i>Formulário da Prova</h3>
                         <div class="card-body">
                             <form method="POST" action="">

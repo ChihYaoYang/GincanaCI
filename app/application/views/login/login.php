@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                        <a class="btn btn-secondary" href="<?= base_url().'index.php/Usuario/cadastrar' ?>">Register</a>
+                        <a class="btn btn-secondary" href="<?= base_url().'Usuario/cadastrar' ?>">Register</a>
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
