@@ -8,11 +8,9 @@ class Usuario_model extends CI_Model {
     //Método que busca usuario no banco de dados
     //Recebe parametro email e senha
     public function getUsuario($email,$senha) {
-        $this->db->where('email',$email);
-                                //criptografa senha
-        $this->db->where('senha', $senha);
-        
-        $query = $this->db->get(self::table);
+        //Validar Email or Username and senha
+        $this->db->where('(email = "'.$email.'" OR nome = "' . $email . '") AND senha ="'. $senha.'"');
+       $query = $this->db->get(self::table);
         return $query->row(0);
     }
 
