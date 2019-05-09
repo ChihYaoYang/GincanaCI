@@ -35,8 +35,8 @@
                         <?php
                         foreach ($integrante as $integ) {
                             echo '<tr class="text-center">';
+                            echo '<td>' . $integ->nome_equipe . '</td>';
                             echo '<td>' . $integ->nome . '</td>';
-                            echo '<td>' . $integ->nomeIntegrante . '</td>';
                             echo '<td>' . $integ->data_nasc . '</td>';
                             echo '<td>' . $integ->rg . '</td>';
                             echo '<td>' . $integ->cpf . '</td>';

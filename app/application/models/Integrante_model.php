@@ -6,10 +6,12 @@
     const table = 'integrante';
     //Read
     public function getAll() {
-        $this->db->order_by('nome', 'ASC');
+        $this->db->order_by('nome_equipe', 'ASC');
         //Fazer join pega dados de equipe
-        $this->db->join('equipe', 'equipe.id=integrante.id_equipe');
-        $query = $this->db->get(self::table);
+        $this->db->select('integrante.*, equipe.nome as nome_equipe');
+        $this->db->from('integrante');
+        $this->db->join('equipe', 'equipe.id=integrante.id_equipe', 'inner');
+        $query = $this->db->get();
         return $query->result();
     }    
     //Create
