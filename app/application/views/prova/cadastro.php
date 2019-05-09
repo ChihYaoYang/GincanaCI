@@ -1,11 +1,17 @@
 <div class="container mt-3">
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cadastro da Prova</li>
+        </ol>
+    </nav>
     <div class="row">
         <div class="col-md-8 offset-md-2 col-xs-12">
                 <!---Card--->
                 <div class="card">
                     <h3 class="card-header bg-transparent"><i class="fas fa-arrow-left"></i> <a
-                            href=<?= base_url() . 'Prova/index' ?>>Back</a><br><i
-                            class="fas fa-edit"></i>Formulário da Prova</h3>
+                            href=<?= base_url() . 'Prova/index' ?>>Back</a><br>
+                            <i class="fas fa-edit"></i>Formulário da Prova</h3>
                     <div class="card-body">
                         <form method="POST" action="">
                             <?php

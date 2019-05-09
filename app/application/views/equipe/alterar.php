@@ -2,14 +2,14 @@
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?=base_url();?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cadastro de Equipe</li>
+            <li class="breadcrumb-item active" aria-current="page">Alteração de Equipe</li>
         </ol>
     </nav>
     <div class="row">
         <div class="col-md-8 offset-md-2 col-xs-12">
             <!---Card--->
             <div class="card">
-                    <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Cadastro de Equipe</h3>
+                    <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Alteração de Equipe</h3>
                     <div class="card-body">
                     <form method="POST" action="">
                         <?php
@@ -22,19 +22,18 @@ if (isset($erro)) {
     echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '</div>';
 }
 ?>
-<input type="hidden" name="id" id="id">
+<input type="hidden" name="id" id="id" value="<?=isset($equipe) ? $equipe->id : '';?>">
                     <div>
                     <label for="nome">Nome de Equipe:</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-users"></i></div>
                         </div>
-                        <input type="text"class="form-control" name="nome" id="nome">
+                        <input type="text"class="form-control" name="nome" id="nome" value="<?= isset($equipe) ? $equipe->nome : '';?>">
                     </div>
                 </div>
                 <div class="text-center">
                 <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Enviar</button>
-                <button type="reset" class="btn btn-outline-secondary"><i class="fas fa-redo"></i> Limpar</button>
                     </div>
                     </form>
                 </div>

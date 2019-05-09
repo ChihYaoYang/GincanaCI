@@ -1,4 +1,10 @@
 <div class="container mt-3">
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lista de Prova</li>
+        </ol>
+    </nav>
     <div class="row">
         <div class="col">
             <h3 class="card-header bg-transparent"><i class="fas fa-list-alt"></i>Lista da Prova</h3>
@@ -33,8 +39,8 @@
                             echo '<td>' . $dado->descricao . '</td>';
                             echo '<td>' . $dado->NumIntegrantes . '</td>';
                             //método
-                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . $this->config->base_url() . 'Prova/deletar/' . $dado->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
-                            '<a class="btn btn-sm btn-outline-warning" href="' . $this->config->base_url() . 'Prova/alterar/' . $dado->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Prova/deletar/' . $dado->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                            '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Prova/alterar/' . $dado->id . '"><i class="fas fa-edit"></i> Alterar</a>'
                             . '</td>';
                             echo '</tr>';
                         }

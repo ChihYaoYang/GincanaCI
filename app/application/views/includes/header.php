@@ -65,7 +65,7 @@
                         <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Equipe</a>
                         <div class="dropdown-menu" aria-labelledby="menuCliente">
                             <a href="<?= base_url() . 'Equipe/index' ?>" class="dropdown-item">Lista de Equipe</a>
-                            <a href="<?= base_url() . 'Equipe/cadastro' ?>" class="dropdown-item">Cadastra Equipe</a>
+                            <a href="<?= base_url() . 'Equipe/cadastrar' ?>" class="dropdown-item">Cadastra Equipe</a>
                         </div>
                     </li>
                 </ul>
