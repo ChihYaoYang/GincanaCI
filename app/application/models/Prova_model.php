@@ -8,6 +8,8 @@ class Prova_model extends CI_Model {
     //Read
     //Busca tabela prova no DataBase e fazer select
     public function getAll() {
+        //Orderna tabela por nome
+        $this->db->order_by('nome', 'ASC');
         $query = $this->db->get(self::table);
         return $query->result();
     }

@@ -18,7 +18,12 @@ class Equipe extends CI_Controller {
         $this->load->view('equipe/lista', $data);
         $this->load->view('includes/footer');
     }
-
+    /*
+    public function count() {
+        $dados = $this->Equipe_model->countrow();
+        $this->load->view('equipe/lista' , $dados);
+    }
+    */
     //Create
     public function cadastro() {
         $this->load->view('includes/header');
@@ -87,5 +92,4 @@ class Equipe extends CI_Controller {
         $this->load->view('includes/footer');
     }
 }
-
 ?>

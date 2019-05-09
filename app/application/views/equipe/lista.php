@@ -23,16 +23,14 @@
                 <table class="table table-dark table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Nº de Equipe</th>
                             <th scope="col">Nome das Equipes</th>
                             <th scope="col">Opção</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-">
+                    <tbody>
                         <?php
                         foreach ($equipe as $e) {
                             echo '<tr class="text-center">';
-                                echo '<td>' . $e->id . '</td>';
                                 echo '<td>' . $e->nome . '</td>';
                                 echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/delete/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
                             '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Equipe/alterar/' . $e->id . '"><i class="fas fa-edit"></i> Alterar</a>'
@@ -40,6 +38,14 @@
                             echo '</tr>';
                         }
                         ?>
+                    <tr>
+                        <th scope="row">Total de Equipe</th>
+                        <td colspan="2" class="text-right"><?php 
+                        $query = $this->db->query('SELECT id FROM equipe');
+                        echo  $query->num_rows();
+                        ?></td>
+                    </tr>
+                   
                     </tbody>
                 </table>
             </div>

@@ -6,9 +6,17 @@ class Equipe_model extends CI_Model{
     const table = 'equipe';
     //Read
     public function getAll(){
+        //Orderna tabela por nome
+        $this->db->order_by('nome', 'ASC');
         $query = $this->db->get(self::table);
         return $query->result();
     }
+    /*
+    public function countrow(){
+        $query = $this->db->query('SELECT id FROM equipe');
+        return $query->num_rows();
+    }
+    */
     //Create
     public function insert($data = array()) {
         $this->db->insert(self::table, $data);
