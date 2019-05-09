@@ -9,8 +9,8 @@ class Usuario_model extends CI_Model {
     //Recebe parametro email e senha
     public function getUsuario($email,$senha) {
         //Validar Email or Username and senha
-        //$this->db->where('(email = "'.$email.'" OR nome = "' . $email . '") AND senha ="'. sha1($senha . 'ryanSENAC').'"');  
-        $this->db->where('(email = "'.$email.'" OR nome = "' . $email . '") AND senha ="'. $senha.'"');
+        $this->db->where('(email = "'.$email.'" OR nome = "' . $email . '") AND senha ="'. sha1($senha . 'ryanSENAC').'"');  
+        //$this->db->where('(email = "'.$email.'" OR nome = "' . $email . '") AND senha ="'. $senha.'"');
         $query = $this->db->get(self::table);
         return $query->row(0);
     }

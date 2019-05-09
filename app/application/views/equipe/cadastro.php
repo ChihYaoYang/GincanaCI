@@ -2,14 +2,14 @@
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?=base_url();?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cadastro de Equipe</li>
+            <li class="breadcrumb-item active" aria-current="page">Cadastra de Equipe</li>
         </ol>
     </nav>
     <div class="row">
         <div class="col-md-8 offset-md-2 col-xs-12">
             <!---Card--->
             <div class="card">
-                    <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Cadastro de Equipe</h3>
+                    <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Formulário de Equipe</h3>
                     <div class="card-body">
                     <form method="POST" action="">
                         <?php

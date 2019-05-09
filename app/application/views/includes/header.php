@@ -44,7 +44,7 @@
         </style>
         <!---Menu--->
         <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-            <a class="navbar-brand breathe-div" href="<?= $this->config->base_url(); ?>"><i class="fas fa-store"></i> Sistema Gincana</a>
+            <a class="navbar-brand breathe-div" href="<?= base_url(); ?>"><i class="fas fa-store"></i> Sistema Gincana</a>
             <!---Menu mobile--->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -56,16 +56,24 @@
                     <li class="nav-item dropdown">
                         <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Clientes</a>
                         <div class="dropdown-menu" aria-labelledby="menuCliente">
-                            <a href="<?= base_url() . 'Prova/index' ?>" class="dropdown-item">Lista da Prova</a>
-                            <a href="<?= base_url() . 'Prova/cadastrar' ?>" class="dropdown-item">Cadastra Prova</a>
+                            <a href="<?= base_url() . 'Prova/index' ?>" class="dropdown-item">Lista de Prova</a>
+                            <a href="<?= base_url() . 'Prova/cadastrar' ?>" class="dropdown-item">Cadastra de Prova</a>
                         </div>
                     </li>
                     <!--Cadastro Equipe--->
                     <li class="nav-item dropdown">
-                        <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Equipe</a>
+                        <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Equipes</a>
                         <div class="dropdown-menu" aria-labelledby="menuCliente">
                             <a href="<?= base_url() . 'Equipe/index' ?>" class="dropdown-item">Lista de Equipe</a>
-                            <a href="<?= base_url() . 'Equipe/cadastrar' ?>" class="dropdown-item">Cadastra Equipe</a>
+                            <a href="<?= base_url() . 'Equipe/cadastrar' ?>" class="dropdown-item">Cadastra de Equipe</a>
+                        </div>
+                    </li>
+                     <!--Cadastro Integrante--->
+                     <li class="nav-item dropdown">
+                        <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Integrantes</a>
+                        <div class="dropdown-menu" aria-labelledby="menuCliente">
+                            <a href="<?= base_url() . 'Integrante/index' ?>" class="dropdown-item">Integrante da Lista</a>
+                            <a href="<?= base_url() . 'Integrante/cadastrar' ?>" class="dropdown-item">Cadastra de Integrante</a>
                         </div>
                     </li>
                 </ul>

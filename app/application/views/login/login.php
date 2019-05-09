@@ -31,7 +31,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                                 </div>
-                                <input type="text"class="form-control" name="email" id="email" value="">
+                                <input type="text"class="form-control" name="email" id="email" placeholder="Email or Username">
                             </div>
                         </div>
 
@@ -41,7 +41,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-key"></i></div>
                                 </div>
-                                <input type="password"class="form-control" name="senha" id="senha" value="">
+                                <input type="password"class="form-control" name="senha" id="senha">
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
