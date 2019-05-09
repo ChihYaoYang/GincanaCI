@@ -3,6 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Prova extends CI_Controller {
+
     //Construct
     public function __construct() {
         parent::__construct();
@@ -10,8 +11,9 @@ class Prova extends CI_Controller {
         $this->load->model('Usuario_model');
         $this->Usuario_model->verificaLogin();
     }
+
     public function index() {
-       //Chama método e criar $dado['prova'] 'prova' para armazena dados e fazer no view
+        //Chama método e criar $dado['prova'] 'prova' para armazena dados e fazer no view
         $data['prova'] = $this->Prova_model->getAll();
         //Carrega Menu
         $this->load->view('includes/header');
@@ -23,12 +25,13 @@ class Prova extends CI_Controller {
 
     //Create
     public function cadastro() {
-         //Carrega Menu
-         $this->load->view('includes/header');
-         $this->load->view('prova/cadastro');
-         //Carrega rodapé
-         $this->load->view('includes/footer');
+        //Carrega Menu
+        $this->load->view('includes/header');
+        $this->load->view('prova/cadastro');
+        //Carrega rodapé
+        $this->load->view('includes/footer');
     }
+
     public function cadastrar() {
         //Regra da validation
         $this->form_validation->set_rules('nome', 'nome', 'required');
@@ -82,6 +85,7 @@ class Prova extends CI_Controller {
 
     //UPDATE
     public function alterar($id) {
+        $this->load->view('includes/header');
         if ($id > 0) {
             //valida e carrega model
             $this->Prova_model;
@@ -118,6 +122,7 @@ class Prova extends CI_Controller {
         } else {
             redirect('Prova/index');
         }
+        $this->load->view('includes/footer');
     }
 
 }
