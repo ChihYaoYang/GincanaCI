@@ -57,8 +57,6 @@ class Usuario extends CI_Controller {
             //Se for false carrega marca de novo e preencher todos campos
             $this->load->view('login/cadastro');
         } else {
-            //Se for True carrega model
-            $this->Usuario_model;
             //E resgata dados de POST
             $data = array(
                 'nome' => $this->input->post('nome'),

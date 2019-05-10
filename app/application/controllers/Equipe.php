@@ -14,16 +14,11 @@ class Equipe extends CI_Controller {
     //Read
     public function index() {
         $data['equipe'] = $this->Equipe_model->getAll();
+        $data['total'] =  $this->Equipe_model->countrow();
         $this->load->view('includes/header');
         $this->load->view('equipe/lista', $data);
         $this->load->view('includes/footer');
     }
-    /*
-    public function count() {
-        $dados = $this->Equipe_model->countrow();
-        $this->load->view('equipe/lista' , $dados);
-    }
-    */
     //Create
     public function cadastro() {
         $this->load->view('includes/header');
@@ -37,7 +32,6 @@ class Equipe extends CI_Controller {
             //Se for false recarrega página
             $this->cadastro();
         } else {
-            $this->Equipe_model;
             $data = array(
                 'nome' => $this->input->post('nome')
             );
@@ -46,7 +40,7 @@ class Equipe extends CI_Controller {
                 $this->session->set_flashdata('mensagem', 'Equipe cadastrado com sucesso! ! !');
                 redirect('Equipe/index');
             } else {
-                $this->session->set_flashdata('mensagem', 'Falha ao cadastra ! ! !');
+                $this->session->set_flashdata('mensagem', 'Falha ao cadastra *_*');
                 redirect('Equipe/cadastro');
             }
         }
@@ -55,7 +49,6 @@ class Equipe extends CI_Controller {
     public function delete($id) {
         //Valida
         if($id > 0) {
-            $this->Equipe_model;
             if($this->Equipe_model->deletar($id)) {
                 $this->session->set_flashdata('mensagem', 'Equipe Deletado com sucesso ! ! !');
                 redirect('Equipe/index');
@@ -69,7 +62,6 @@ class Equipe extends CI_Controller {
     public function alterar($id){
         $this->load->view('includes/header');
         if($id > 0) {
-            $this->Equipe_model;
             $this->form_validation->set_rules('nome', 'nome', 'required');
             if($this->form_validation->run() == false) {
                 $data['equipe'] = $this->Equipe_model->getId($id);

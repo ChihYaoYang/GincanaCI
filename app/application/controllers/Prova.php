@@ -43,8 +43,6 @@ class Prova extends CI_Controller {
             //Se for false chama Form de novo
             $this->cadastro();
         } else {
-            //se for true chama model
-            $this->Prova_model;
             //resgata dados pelo post
             $data = array(
                 'nome' => $this->input->post('nome'),
@@ -73,7 +71,6 @@ class Prova extends CI_Controller {
     public function deletar($id) {
         //Valida
         if ($id > 0) {
-            $this->Prova_model;
             if ($this->Prova_model->delete($id)) {
                 $this->session->set_flashdata('mensagem', 'Prova deletado com sucesso ! ! !');
             } else {
@@ -87,8 +84,6 @@ class Prova extends CI_Controller {
     public function alterar($id) {
         $this->load->view('includes/header');
         if ($id > 0) {
-            //valida e carrega model
-            $this->Prova_model;
             //Validation form
             $this->form_validation->set_rules('nome', 'nome', 'required');
             $this->form_validation->set_rules('tempo', 'tempo', 'required');

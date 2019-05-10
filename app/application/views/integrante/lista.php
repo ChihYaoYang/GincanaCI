@@ -40,6 +40,9 @@
                             echo '<td>' . $integ->data_nasc . '</td>';
                             echo '<td>' . $integ->rg . '</td>';
                             echo '<td>' . $integ->cpf . '</td>';
+                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Integrante/deletar/' . $integ->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                            '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Integrante/alterar/' . $integ->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                            . '</td>';
                             echo '</tr>';
                         }
                         ?>

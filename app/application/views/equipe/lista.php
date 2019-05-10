@@ -1,5 +1,5 @@
 <div class="container mt-3">
-<nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Lista de Equipe</li>
@@ -31,21 +31,19 @@
                         <?php
                         foreach ($equipe as $e) {
                             echo '<tr class="text-center">';
-                                echo '<td>' . $e->nome . '</td>';
-                                echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/delete/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                            echo '<td>' . $e->nome . '</td>';
+                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/delete/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
                             '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Equipe/alterar/' . $e->id . '"><i class="fas fa-edit"></i> Alterar</a>'
                             . '</td>';
                             echo '</tr>';
                         }
                         ?>
-                    <tr>
-                        <th scope="row">Total de Equipe</th>
-                        <td colspan="2" class="text-right"><?php 
-                        $query = $this->db->query('SELECT id FROM equipe');
-                        echo  $query->num_rows();
-                        ?></td>
-                    </tr>
-                   
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total de Equipe</th>
+                            <td colspan="2" class="text-right"><?php echo $total; ?></td>
+                        </tr>
+                    </tfoot>
                     </tbody>
                 </table>
             </div>

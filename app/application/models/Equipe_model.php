@@ -11,12 +11,10 @@ class Equipe_model extends CI_Model{
         $query = $this->db->get(self::table);
         return $query->result();
     }
-    /*
     public function countrow(){
         $query = $this->db->query('SELECT id FROM equipe');
         return $query->num_rows();
     }
-    */
     //Create
     public function insert($data = array()) {
         $this->db->insert(self::table, $data);
