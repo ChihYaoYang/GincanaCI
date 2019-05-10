@@ -68,12 +68,20 @@
                             <a href="<?= base_url() . 'Equipe/cadastrar' ?>" class="dropdown-item">Cadastra de Equipe</a>
                         </div>
                     </li>
-                     <!--Cadastro Integrante--->
-                     <li class="nav-item dropdown">
+                    <!--Cadastro Integrante--->
+                    <li class="nav-item dropdown">
                         <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Integrantes</a>
                         <div class="dropdown-menu" aria-labelledby="menuCliente">
                             <a href="<?= base_url() . 'Integrante/index' ?>" class="dropdown-item">Integrante da Lista</a>
                             <a href="<?= base_url() . 'Integrante/cadastrar' ?>" class="dropdown-item">Cadastra de Integrante</a>
+                        </div>
+                    </li>
+                    <!--Cadastro Pontuação--->
+                    <li class="nav-item dropdown">
+                        <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Pontuação</a>
+                        <div class="dropdown-menu" aria-labelledby="menuCliente">
+                            <a href="<?= base_url() . 'Pontuacao/index' ?>" class="dropdown-item">Lista de Pontuação</a>
+                            <a href="<?= base_url() . 'Pontuacao/cadastrar' ?>" class="dropdown-item">Cadastra de Pontuação</a>
                         </div>
                     </li>
                 </ul>
