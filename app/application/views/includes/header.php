@@ -54,7 +54,7 @@
                 <ul class="navbar-nav mr-auto">
                     <!--Cadastro Prova--->
                     <li class="nav-item dropdown">
-                        <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Clientes</a>
+                        <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown">Prova</a>
                         <div class="dropdown-menu" aria-labelledby="menuCliente">
                             <a href="<?= base_url() . 'Prova/index' ?>" class="dropdown-item">Lista de Prova</a>
                             <a href="<?= base_url() . 'Prova/cadastrar' ?>" class="dropdown-item">Cadastra de Prova</a>

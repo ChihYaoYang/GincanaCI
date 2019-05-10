@@ -32,7 +32,7 @@
                         foreach ($equipe as $e) {
                             echo '<tr class="text-center">';
                             echo '<td>' . $e->nome . '</td>';
-                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/delete/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/deletar/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
                             '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Equipe/alterar/' . $e->id . '"><i class="fas fa-edit"></i> Alterar</a>'
                             . '</td>';
                             echo '</tr>';

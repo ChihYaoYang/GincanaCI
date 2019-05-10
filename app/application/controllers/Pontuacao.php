@@ -56,7 +56,18 @@ class Pontuacao extends CI_Controller {
             }
         }
     }
-
+    //Delete
+    public function deletar($id) {
+        //Valida 
+        if($id > 0) {
+            if($this->Pontuacao_model->delete($id)) {
+                $this->session->set_flashdata('mensagem', 'Pontuação deletado com sucesso! ! !');
+            } else {
+                $this->session->set_flashdata('erro', 'Falha ao deletar Pontuação *_*');
+            }
+        }
+         redirect('Pontuacao/index');
+    }
 }
 
 ?>

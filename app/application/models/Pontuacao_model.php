@@ -15,8 +15,19 @@ class Pontuacao_model extends CI_Model {
 
     //Create
     public function insert($data = array()) {
-         $this->db->insert(self::table, $data);
+        $this->db->insert(self::table, $data);
         return $this->db->affected_rows();
+    }
+
+    //Delete 
+    public function delete($id) {
+        if ($id > 0) {
+            $this->db->where('id', $id);
+            $this->db->delete(self::table);
+            return $this->db->affected_rows();
+        } else {
+            return false;
+        }
     }
 
 }

@@ -28,17 +28,21 @@
                             <th scope="col">Id do Usuario</th>
                             <th scope="col">Pontos</th>
                             <th scope="col">Data Hora</th>
+                            <th scope="col">Opção</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         foreach ($pontuacao as $ponto) {
                             echo '<tr class="text-center">';
-                            echo '<td>' .$ponto->id_equipe .'</td>';
-                            echo '<td>' .$ponto->id_prova .'</td>';
-                            echo '<td>' .$ponto->id_usuario .'</td>';
-                            echo '<td>' .$ponto->pontos .'</td>';
-                            echo '<td>' .$ponto->data_hora .'</td>';
+                            echo '<td>' . $ponto->id_equipe . '</td>';
+                            echo '<td>' . $ponto->id_prova . '</td>';
+                            echo '<td>' . $ponto->id_usuario . '</td>';
+                            echo '<td>' . $ponto->pontos . '</td>';
+                            echo '<td>' . $ponto->data_hora . '</td>';
+                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Pontuacao/deletar/' . $ponto->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                            '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Pontuacao/alterar/' . $ponto->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                            . '</td>';
                             echo '</tr>';
                         }
                         ?>

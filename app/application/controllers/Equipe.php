@@ -46,12 +46,11 @@ class Equipe extends CI_Controller {
         }
     }
     //Delete
-    public function delete($id) {
+    public function deletar($id) {
         //Valida
         if($id > 0) {
-            if($this->Equipe_model->deletar($id)) {
+            if($this->Equipe_model->delete($id)) {
                 $this->session->set_flashdata('mensagem', 'Equipe Deletado com sucesso ! ! !');
-                redirect('Equipe/index');
             } else {
                 $this->session->set_flashdata('mensagem', 'Falha ao deletar equipe *_*');
             }

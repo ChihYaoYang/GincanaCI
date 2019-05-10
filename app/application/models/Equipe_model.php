@@ -21,7 +21,7 @@ class Equipe_model extends CI_Model{
         return $this->db->affected_rows();
     }
     //Delete
-    public function deletar($id) {
+    public function delete($id) {
         if($id > 0) {
             $this->db->where('id',$id);
             $this->db->delete(self::table);
