@@ -10,6 +10,7 @@ class Prova_model extends CI_Model {
     public function getAll() {
         //Orderna tabela por nome
         $this->db->order_by('nome', 'ASC');
+        $this->db->select('*,(SELECT COUNT(id_prova) FROM pontuacao WHERE id_prova=prova.id) as prova');
         $query = $this->db->get(self::table);
         return $query->result();
     }

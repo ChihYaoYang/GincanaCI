@@ -25,7 +25,7 @@
                         <tr class="text-center">
                             <th scope="col">Nome da Equipe</th>
                             <th scope="col">Nome da Prova</th>
-                            <th scope="col">Nome do Usuario</th>
+                            <th scope="col">Cadastrado por</th>
                             <th scope="col">Pontos</th>
                             <th scope="col">Data Hora</th>
                             <th scope="col">Opção</th>

@@ -9,7 +9,7 @@ class Pontuacao_model extends CI_Model {
     const table = 'pontuacao';
 
     public function getAll() {
-        
+        $this->db->order_by('nome_prova', 'ASC');
         //Join tabela Equipe
         $this->db->select('pontuacao.*, equipe.nome as nome_equipe');
         $this->db->select('pontuacao.*, prova.nome as nome_prova');
@@ -18,18 +18,8 @@ class Pontuacao_model extends CI_Model {
         $this->db->join('equipe', 'equipe.id=pontuacao.id_equipe', 'inner');
         $this->db->join('prova', 'prova.id=pontuacao.id_prova', 'inner');
         $this->db->join('usuario', 'usuario.id=pontuacao.id_usuario', 'inner');
-        
-        
-        
         $query = $this->db->get();
-        
-        return $query->result();
-        
-        
-        
-        
-        
-        
+        return $query->result();  
     }
 
     //Create
