@@ -8,6 +8,7 @@ class Equipe_model extends CI_Model{
     public function getAll(){
         //Orderna tabela por nome
         $this->db->order_by('nome', 'ASC');
+        $this->db->select('*,(SELECT COUNT(id_equipe) FROM integrante WHERE id_equipe=equipe.id) as equipe');
         $query = $this->db->get(self::table);
         return $query->result();
     }

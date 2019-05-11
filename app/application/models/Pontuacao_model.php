@@ -9,7 +9,7 @@ class Pontuacao_model extends CI_Model {
     const table = 'pontuacao';
 
     public function getAll() {
-        $this->db->order_by('nome_prova', 'ASC');
+        $this->db->order_by('pontos', 'DESC');
         //Join tabela Equipe
         $this->db->select('pontuacao.*, equipe.nome as nome_equipe');
         $this->db->select('pontuacao.*, prova.nome as nome_prova');
