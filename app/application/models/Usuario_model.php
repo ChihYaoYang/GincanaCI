@@ -13,6 +13,14 @@ class Usuario_model extends CI_Model {
         return $query->result();
     }
 
+    //GET_ID
+    public function getId($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get(self::table);
+        //retorna apenas a primeira linha
+        return $query->row(0);
+    }
+
     //Método que busca usuario no banco de dados
     //Recebe parametro email e senha
     public function getUsuario($email, $senha) {

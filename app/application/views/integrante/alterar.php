@@ -11,6 +11,7 @@
             <div class="card">
                 <h3 class="card-header bg-transparent"> <i class="fas fa-edit"></i>Alteração de Integrante</h3>
                 <div class="card-body">
+                    <?php echo validation_errors(); ?>
                     <form method="POST" action="">
                         <?php
                         $mensagem = $this->session->flashdata('mensagem');
@@ -33,12 +34,12 @@
                                 <select id="id_equipe" name="id_equipe" class="form-control">
                                     <option value="">Seleciona uma Equipe</option>
                                     <?php
-                                    foreach ($equipe as $e) {
-                                        if ($e > 0) {
+                                    if (count($equipe) > 0) {
+                                        foreach ($equipe as $e) {
                                             echo '<option ' . ($integrante->id_equipe == $e->id ? 'selected' : null) . ' value="' . $e->id . '">' . $e->nome . '</option>';
-                                        } else {
-                                            echo '<option value="">Nenhuma Equipe cadastrada.</option>';
                                         }
+                                    } else {
+                                        echo '<option value="">Nenhuma Equipe cadastrada.</option>';
                                     }
                                     ?>
                                 </select>

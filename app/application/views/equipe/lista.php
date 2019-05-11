@@ -29,13 +29,17 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($equipe as $e) {
-                            echo '<tr class="text-center">';
-                            echo '<td>' . $e->nome . '</td>';
-                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/deletar/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
-                            '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Equipe/alterar/' . $e->id . '"><i class="fas fa-edit"></i> Alterar</a>'
-                            . '</td>';
-                            echo '</tr>';
+                        if (count($equipe) > 0) {
+                            foreach ($equipe as $e) {
+                                echo '<tr class="text-center">';
+                                echo '<td>' . $e->nome . '</td>';
+                                echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Equipe/deletar/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                                '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Equipe/alterar/' . $e->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                                . '</td>';
+                                echo '</tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="2">Nenhum Equipe cadastrado</td></tr>';
                         }
                         ?>
                     <tfoot>

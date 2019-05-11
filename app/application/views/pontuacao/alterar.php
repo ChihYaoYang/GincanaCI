@@ -2,14 +2,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cadastra de Pontuação</li>
+            <li class="breadcrumb-item active" aria-current="page">Alteração de Pontuação</li>
         </ol>
     </nav>
     <div class="row">
         <div class="col-md-8 offset-md-2 col-xs-12">
             <!---Card--->
             <div class="card">
-                <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Formulário da Pontuação</h3>
+                <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Alteração de Pontuação</h3>
                 <div class="card-body">
                     <?php echo validation_errors(); ?>
                     <form method="POST" action="">
@@ -23,7 +23,7 @@
                             echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '</div>';
                         }
                         ?>
-                        <input type="hidden" name="id" id="id">
+                        <input type="hidden" name="id" id="id" value="<?= (isset($pontos)) ? $pontos->id : ''; ?>">
                         <!----Nome da Equipe--->
                         <div>
                             <label for="id_equipe">Nome da Equipe:</label>
@@ -34,12 +34,13 @@
                                 <select id="id_equipe" name="id_equipe" class="form-control">
                                     <option value="">Seleciona uma Equipe</option>
                                     <?php
-                                    foreach ($equipe as $e) {
-                                        if ($e > 0) {
-                                            echo '<option value="' . $e->id . '" '. set_select('id_equipe', $e->id) .' >' . $e->nome .  '</option>';
-                                        } else {
-                                            echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                    if (count($equipe) > 0) {
+                                        foreach ($equipe as $e) {
+
+                                            echo '<option ' . ($pontos->id_equipe == $e->id ? 'selected ' : null) . ' value="' . $e->id . '">' . $e->nome . '</option>';
                                         }
+                                    } else {
+                                        echo '<option value="">Nenhuma Equipe cadastrada.</option>';
                                     }
                                     ?>
                                 </select>
@@ -56,12 +57,13 @@
                                 <select id="id_prova" name="id_prova" class="form-control">
                                     <option value="">Seleciona uma Prova</option>
                                     <?php
-                                    foreach ($prova as $p) {
-                                        if ($e > 0) {
-                                            echo '<option value="' . $p->id . '" '. set_select('id_prova', $p->id) .'>' . $p->nome . '</option>';
-                                        } else {
-                                            echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                    if (count($prova) > 0) {
+                                        foreach ($prova as $p) {
+
+                                            echo '<option ' . ($pontos->id_prova == $p->id ? 'selected ' : null) . 'value="' . $p->id . '">' . $p->nome . '</option>';
                                         }
+                                    } else {
+                                        echo '<option value="">Nenhuma Equipe cadastrada.</option>';
                                     }
                                     ?>
                                 </select>
@@ -79,12 +81,12 @@
                                 <select id="id_usuario" name="id_usuario" class="form-control">
                                     <option value="">Seleciona Usuário</option>
                                     <?php
-                                    foreach ($usuario as $u) {
-                                        if ($e > 0) {
-                                            echo '<option value="' . $u->id . '" '. set_select('id_usuario', $u->id) .'>' . $u->nome . '</option>';
-                                        } else {
-                                            echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                    if (count($usuario) > 0) {
+                                        foreach ($usuario as $u) {
+                                            echo '<option ' . ($pontos->id_usuario == $u->id ? 'selected ' : null) . 'value="' . $u->id . '">' . $u->nome . '</option>';
                                         }
+                                    } else {
+                                        echo '<option value="">Nenhuma Equipe cadastrada.</option>';
                                     }
                                     ?>
                                 </select>
@@ -97,7 +99,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fab fa-bitcoin"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="pontos" name="pontos" value="<?php echo set_value('pontos')?>"> 
+                                <input type="text" class="form-control" id="pontos" name="pontos" value="<?= (isset($pontos)) ? $pontos->pontos : '';?>"> 
                             </div>
                         </div>
 
@@ -108,14 +110,12 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-clock"></i></div>
                                 </div>
-                                <input type="datetime-local" class="form-control" id="data_hora" name="data_hora" value="<?php echo set_value('data_hora')?>"> 
+                                <input type="datetime" class="form-control" id="data_hora" name="data_hora" value="<?= (isset($pontos)) ? $pontos->data_hora : ''; ?>"> 
                             </div>
                         </div>
-
                         <br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enviar</button>
-                            <button type="reset" class="btn btn-primary"><i class="fas fa-edit"></i> Limpar</button>
                         </div>
                     </form>
                 </div>

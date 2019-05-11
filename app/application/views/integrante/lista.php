@@ -1,5 +1,5 @@
 <div class="container mt-3">
-<nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Integrante da Lista</li>
@@ -33,17 +33,21 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($integrante as $integ) {
-                            echo '<tr class="text-center">';
-                            echo '<td>' . $integ->nome_equipe . '</td>';
-                            echo '<td>' . $integ->nome . '</td>';
-                            echo '<td>' . $integ->data_nasc . '</td>';
-                            echo '<td>' . $integ->rg . '</td>';
-                            echo '<td>' . $integ->cpf . '</td>';
-                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Integrante/deletar/' . $integ->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
-                            '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Integrante/alterar/' . $integ->id . '"><i class="fas fa-edit"></i> Alterar</a>'
-                            . '</td>';
-                            echo '</tr>';
+                        if (count($integrante) > 0) {
+                            foreach ($integrante as $integ) {
+                                echo '<tr class="text-center">';
+                                echo '<td>' . $integ->nome_equipe . '</td>';
+                                echo '<td>' . $integ->nome . '</td>';
+                                echo '<td>' . $integ->data_nasc . '</td>';
+                                echo '<td>' . $integ->rg . '</td>';
+                                echo '<td>' . $integ->cpf . '</td>';
+                                echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Integrante/deletar/' . $integ->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                                '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Integrante/alterar/' . $integ->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                                . '</td>';
+                                echo '</tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="5">Nenhum Integrante cadastrado</td></tr>';
                         }
                         ?>
                     </tbody>

@@ -1,5 +1,5 @@
 <div class="container mt-3">
-<nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Lista de Prova</li>
@@ -32,17 +32,21 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($prova as $dado) {
-                            echo '<tr class="text-center">';
-                            echo '<td>' . $dado->nome . '</td>';
-                            echo '<td>' . $dado->tempo . '</td>';
-                            echo '<td>' . $dado->descricao . '</td>';
-                            echo '<td>' . $dado->NumIntegrantes . '</td>';
-                            //método
-                            echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Prova/deletar/' . $dado->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
-                            '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Prova/alterar/' . $dado->id . '"><i class="fas fa-edit"></i> Alterar</a>'
-                            . '</td>';
-                            echo '</tr>';
+                        if (count($prova) > 0) {
+                            foreach ($prova as $dado) {
+                                echo '<tr class="text-center">';
+                                echo '<td>' . $dado->nome . '</td>';
+                                echo '<td>' . $dado->tempo . '</td>';
+                                echo '<td>' . $dado->descricao . '</td>';
+                                echo '<td>' . $dado->NumIntegrantes . '</td>';
+                                //método
+                                echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Prova/deletar/' . $dado->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                                '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Prova/alterar/' . $dado->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                                . '</td>';
+                                echo '</tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="5">Nenhum Prova cadastrado</td></tr>';
                         }
                         ?>
                     </tbody>
