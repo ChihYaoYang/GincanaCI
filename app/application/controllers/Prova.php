@@ -59,7 +59,7 @@ class Prova extends CI_Controller {
                 redirect('Prova/index');
             } else {
                 //salva uma mensagem na sessão
-                $this->session->set_flashdata('erro', 'Erro ao cadastrar Prova *_*');
+                $this->session->set_flashdata('erro', 'Falha ao cadastrar Prova *_*');
 
                 //Se for false redireciona para cadastrar
                 redirect('Prova/cadastro');
@@ -106,12 +106,10 @@ class Prova extends CI_Controller {
                 //Chama método de update
                 if ($this->Prova_model->update($id, $data)) {
                     $this->session->set_flashdata('mensagem', 'Prova alterado com sucesso ! ! !');
-
                     redirect('Prova/index');
                 } else {
                     $this->session->set_flashdata('erro', 'Falha ao alterar Prova *_*');
-
-                    redirect('Prova/alterar/', $id);
+                    redirect('Prova/alterar/' . $id);
                 }
             }
         } else {
@@ -119,7 +117,5 @@ class Prova extends CI_Controller {
         }
         $this->load->view('includes/footer');
     }
-
 }
-
 ?>

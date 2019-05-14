@@ -63,7 +63,7 @@
                                             echo '<option ' . ($pontos->id_prova == $p->id ? 'selected ' : null) . 'value="' . $p->id . '">' . $p->nome . '</option>';
                                         }
                                     } else {
-                                        echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                        echo '<option value="">Nenhuma Prova cadastrada.</option>';
                                     }
                                     ?>
                                 </select>
@@ -86,7 +86,7 @@
                                             echo '<option ' . ($pontos->id_usuario == $u->id ? 'selected ' : null) . 'value="' . $u->id . '">' . $u->nome . '</option>';
                                         }
                                     } else {
-                                        echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                        echo '<option value="">Nenhuma Usuário cadastrada.</option>';
                                     }
                                     ?>
                                 </select>
@@ -120,7 +120,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

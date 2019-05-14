@@ -35,7 +35,7 @@
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Enviar</button>
-                            <button type="reset" class="btn btn-outline-secondary"><i class="fas fa-redo"></i> Limpar</button>
+                            <button type="reset" class="btn btn-primary"><i class="fas fa-redo"></i> Limpar</button>
                         </div>
                     </form>
                 </div>

@@ -85,14 +85,11 @@
                                 <input type="text" class="form-control" id="cpf" name="cpf" value="<?php echo set_value('cpf') ?>">
                             </div>
                         </div>
-
-
+                        
                         <br>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i>
-                                Enviar</button>
-                            <button type="reset" class="btn btn-primary"><i class="fas fa-edit"></i>
-                                Limpar</button>
+                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enviar</button>
+                            <button type="reset" class="btn btn-primary"><i class="fas fa-redo"></i> Limpar</button>
                         </div>
                     </form>
                 </div>

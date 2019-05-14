@@ -25,7 +25,7 @@ class Pontuacao extends CI_Controller {
     public function cadastro() {
         $data['equipe'] = $this->Equipe_model->getAll();
         $data['prova'] = $this->Prova_model->getAll();
-        $data['usuario'] = $this->Usuario_model->getAll();
+        $data['usuario'] = $this->Usuario_model->getNome();
         $this->load->view('includes/header');
         $this->load->view('pontuacao/cadastro', $data);
         $this->load->view('includes/footer');
@@ -84,7 +84,7 @@ class Pontuacao extends CI_Controller {
                 $data['pontos'] = $this->Pontuacao_model->getId($id);
                 $data['equipe'] = $this->Equipe_model->getAll($id);
                 $data['prova'] = $this->Prova_model->getAll($id);
-                $data['usuario'] = $this->Usuario_model->getAll($id);
+                $data['usuario'] = $this->Usuario_model->getNome($id);
                 $this->load->view('pontuacao/alterar', $data);
             } else {
                 $data = array(
@@ -99,7 +99,7 @@ class Pontuacao extends CI_Controller {
                     redirect('Pontuacao/index');
                 } else {
                     $this->session->set_flashdata('erro', 'Falha ao alterar Pontuação *_*');
-                    redirect('Pontuacao/alterar', $id);
+                    redirect('Pontuacao/alterar/'. $id);
                 }
             }
         } else {

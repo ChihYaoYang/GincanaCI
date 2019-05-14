@@ -22,7 +22,7 @@
             <div class="table-responsive">
                 <table class="table table-dark table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th scope="col">Nome das Equipes</th>
                             <th scope="col">Opção</th>
                         </tr>

@@ -104,7 +104,7 @@ class Integrante extends CI_Controller {
                     redirect('Integrante/index');
                 } else {
                     $this->session->set_flashdata('erro', 'Falha ao alterar integrante *_*');
-                    redirect('Integrante/alterar/', $id);
+                    redirect('Integrante/alterar/'. $id);
                 }
             }
         } else {

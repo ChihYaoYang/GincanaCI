@@ -68,7 +68,7 @@ class Usuario extends CI_Controller {
                 $this->session->set_flashdata('mensagems', ' Cadastrado com sucesso! ! !');
                 redirect('Usuario/login');
             } else {
-                $this->session->set_flashdata('erro', ' Erro ao cadastrar *_*');
+                $this->session->set_flashdata('erro', ' Falha ao cadastrar *_*');
                 redirect('Usuario/cadastrar');
             }
         }

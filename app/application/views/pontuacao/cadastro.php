@@ -60,7 +60,7 @@
                                         if ($e > 0) {
                                             echo '<option value="' . $p->id . '" '. set_select('id_prova', $p->id) .'>' . $p->nome . '</option>';
                                         } else {
-                                            echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                            echo '<option value="">Nenhuma Prova cadastrada.</option>';
                                         }
                                     }
                                     ?>
@@ -83,7 +83,7 @@
                                         if ($e > 0) {
                                             echo '<option value="' . $u->id . '" '. set_select('id_usuario', $u->id) .'>' . $u->nome . '</option>';
                                         } else {
-                                            echo '<option value="">Nenhuma Equipe cadastrada.</option>';
+                                            echo '<option value="">Nenhuma Usuário cadastrada.</option>';
                                         }
                                     }
                                     ?>
@@ -115,7 +115,7 @@
                         <br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enviar</button>
-                            <button type="reset" class="btn btn-primary"><i class="fas fa-edit"></i> Limpar</button>
+                            <button type="reset" class="btn btn-primary"><i class="fas fa-redo"></i> Limpar</button>
                         </div>
                     </form>
                 </div>

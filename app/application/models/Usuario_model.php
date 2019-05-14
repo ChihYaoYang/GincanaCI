@@ -8,7 +8,8 @@ class Usuario_model extends CI_Model {
 
     const table = 'usuario';
 
-    public function getAll() {
+    public function getNome() {
+        $this->db->select('usuario.*, nome');
         $query = $this->db->get(self::table);
         return $query->result();
     }
