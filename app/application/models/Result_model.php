@@ -13,6 +13,7 @@ class Result_model extends CI_Model
               $this->db->join('equipe', 'equipe.id=pontuacao.id_equipe', 'inner');
               $this->db->group_by('id_equipe');
               $this->db->order_by('pontos DESC');
+              $this->db->limit(6);
               $query = $this->db->get();
               return $query->result();  
     }
