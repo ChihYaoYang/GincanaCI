@@ -16,11 +16,11 @@
                         <?php
                         $mensagem = $this->session->flashdata('mensagem');
                         if (isset($mensagem)) {
-                            echo '<div class="alert alert-success"> <i class="fas fa-check"></i>' . $mensagem . '</div>';
+                            echo '<div class="alert alert-success"> <i class="fas fa-check"></i>' . $mensagem . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
                         }
                         $erro = $this->session->flashdata('erro');
                         if (isset($erro)) {
-                            echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '</div>';
+                            echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
                         }
                         ?>
                         <input type="hidden" name="id" id="id">
@@ -36,7 +36,7 @@
                                     <?php
                                     foreach ($equipe as $e) {
                                         if ($e > 0) {
-                                            echo '<option value="' . $e->id . '" '. set_select('id_equipe', $e->id) .' >' . $e->nome .  '</option>';
+                                            echo '<option value="' . $e->id . '" ' . set_select('id_equipe', $e->id) . ' >' . $e->nome . '</option>';
                                         } else {
                                             echo '<option value="">Nenhuma Equipe cadastrada.</option>';
                                         }
@@ -58,7 +58,7 @@
                                     <?php
                                     foreach ($prova as $p) {
                                         if ($e > 0) {
-                                            echo '<option value="' . $p->id . '" '. set_select('id_prova', $p->id) .'>' . $p->nome . '</option>';
+                                            echo '<option value="' . $p->id . '" ' . set_select('id_prova', $p->id) . '>' . $p->nome . '</option>';
                                         } else {
                                             echo '<option value="">Nenhuma Prova cadastrada.</option>';
                                         }
@@ -81,7 +81,7 @@
                                     <?php
                                     foreach ($usuario as $u) {
                                         if ($e > 0) {
-                                            echo '<option value="' . $u->id . '" '. set_select('id_usuario', $u->id) .'>' . $u->nome . '</option>';
+                                            echo '<option value="' . $u->id . '" ' . set_select('id_usuario', $u->id) . '>' . $u->nome . '</option>';
                                         } else {
                                             echo '<option value="">Nenhuma Usuário cadastrada.</option>';
                                         }
@@ -97,7 +97,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fab fa-bitcoin"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="pontos" name="pontos" value="<?php echo set_value('pontos')?>"> 
+                                <input type="text" class="form-control" id="pontos" name="pontos" value="<?php echo set_value('pontos') ?>"> 
                             </div>
                         </div>
 
@@ -108,7 +108,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-clock"></i></div>
                                 </div>
-                                <input type="datetime-local" class="form-control" id="data_hora" name="data_hora" value="<?php echo set_value('data_hora')?>"> 
+                                <input type="datetime-local" class="form-control" id="data_hora" name="data_hora" value="<?php echo set_value('data_hora') ?>"> 
                             </div>
                         </div>
 

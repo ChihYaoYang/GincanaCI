@@ -12,11 +12,11 @@
             //Mensagem
             $mensagem = $this->session->flashdata('mensagem');
             if (isset($mensagem)) {
-                echo '<div class="alert alert-success"> <i class="fas fa-check"></i> ' . $mensagem . '</div>';
+                echo '<div class="alert alert-success"> <i class="fas fa-check"></i> ' . $mensagem . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
             }
             $erro = $this->session->flashdata('erro');
             if (isset($erro)) {
-                echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '</div>';
+                echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
             }
             ?>
             <div class="table-responsive">

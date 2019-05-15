@@ -19,25 +19,27 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($resultado as $key => $resul) {
-                            $k = $key + 1;
-                            echo '<tr class="text-center">';
-                            //Se for primeiro
-                            if ($k == 1) {
-                                echo '<td>' . $k . 'º <i class="fas fa-trophy" style="color:#f9ca24;"></i></td>';
-                            } else if ($k == 2) {
-                                echo '<td>' . $k . 'º <i class="fas fa-medal" style="color:#E5E5E5;"></i></td>';
-                            } else if ($k == 3) {
-                                echo '<td>' . $k . 'º <i class="fas fa-award" style="color:#A57164;"></i></td>';
-                            } else {
-                                echo '<td>' . $k . 'º </td>';
+                        if (count($resultado) > 0) {
+                            foreach ($resultado as $key => $resul) {
+                                $k = $key + 1;
+                                echo '<tr class="text-center">';
+                                //Se for primeiro
+                                if ($k == 1) {
+                                    echo '<td>' . $k . 'º <i class="fas fa-trophy" style="color:#f9ca24;"></i></td>';
+                                } else if ($k == 2) {
+                                    echo '<td>' . $k . 'º <i class="fas fa-medal" style="color:#E5E5E5;"></i></td>';
+                                } else if ($k == 3) {
+                                    echo '<td>' . $k . 'º <i class="fas fa-award" style="color:#A57164;"></i></td>';
+                                } else {
+                                    echo '<td>' . $k . 'º </td>';
+                                }
+                                echo '<td>' . $resul->nome_equipe . '</td>';
+                                echo '<td>' . $resul->pontos . '</td>';
+                                echo '</tr>';
                             }
-                            echo '<td>' . $resul->nome_equipe . '</td>';
-                            echo '<td>' . $resul->pontos . '</td>';
-                            echo '</tr>';
+                        } else {
+                            echo '<tr><td colspan="3">Nenhum Equipe Ganhou</td></tr>';
                         }
-
-
                         ?>
                     </tbody>
                 </table>

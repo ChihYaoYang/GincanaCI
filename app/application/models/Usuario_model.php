@@ -43,7 +43,7 @@ class Usuario_model extends CI_Model {
     public function verificaLogin() {
         //resgata na sessão o status logado e o id do usuario
         $logado = $this->session->userdata('logado');
-        $idUsuaio = $this->session->userdata('idUsuaio');
+        $idUsuaio = $this->session->userdata('idUsuario');
         //verifica se o status está setado, ou não está true, ou não tem isUsuario
         if ((!isset($logado)) || ($logado != TRUE) || ($idUsuaio <= 0)) {
             //redireciona obrigando o login...

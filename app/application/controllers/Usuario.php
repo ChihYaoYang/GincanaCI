@@ -31,7 +31,8 @@ class Usuario extends CI_Controller {
             if ($usuario) {
                 //Montamos um array com as informações do usuário logado
                 $data = array(
-                    'idUsuaio' => $usuario->id,
+                    'idUsuario' => $usuario->id,
+                    'nome' => $usuario->nome,
                     'email' => $usuario->email,
                     'logado' => true
                 );
