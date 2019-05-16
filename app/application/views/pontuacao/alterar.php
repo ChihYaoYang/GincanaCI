@@ -66,28 +66,6 @@
                             </div>
                         </div> 
 
-
-                        <!----Nome da usuario--->
-                        <div>
-                            <label for="id_usuario">Nome da Usuário:</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fas fa-user"></i></div>
-                                </div>
-                                <select id="id_usuario" name="id_usuario" class="form-control">
-                                    <option value="">Seleciona Usuário</option>
-                                    <?php
-                                    if (count($usuario) > 0) {
-                                        foreach ($usuario as $u) {
-                                            echo '<option ' . ($pontos->id_usuario == $u->id ? 'selected ' : null) . 'value="' . $u->id . '">' . $u->nome . '</option>';
-                                        }
-                                    } else {
-                                        echo '<option value="">Nenhuma Usuário cadastrada.</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        </div> 
                         <!--Pontos---->
                         <div>
                             <label for="pontos">Pontos:</label>
@@ -96,17 +74,6 @@
                                     <div class="input-group-text"><i class="fab fa-bitcoin"></i></div>
                                 </div>
                                 <input type="text" class="form-control" id="pontos" name="pontos" value="<?= (isset($pontos)) ? $pontos->pontos : ''; ?>"> 
-                            </div>
-                        </div>
-
-                        <!--Data Hora---->
-                        <div>
-                            <label for="data_hora">Data / Hora:</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fas fa-clock"></i></div>
-                                </div>
-                                <input type="datetime" class="form-control" id="data_hora" name="data_hora" value="<?= (isset($pontos)) ? $pontos->data_hora : ''; ?>"> 
                             </div>
                         </div>
                         <br>

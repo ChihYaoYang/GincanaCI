@@ -25,7 +25,6 @@ class Pontuacao extends CI_Controller {
     public function cadastro() {
         $data['equipe'] = $this->Equipe_model->getAll();
         $data['prova'] = $this->Prova_model->getAll();
-        $data['usuario'] = $this->Usuario_model->getNome();
         $this->load->view('includes/header');
         $this->load->view('pontuacao/cadastro', $data);
         $this->load->view('includes/footer');
@@ -34,18 +33,18 @@ class Pontuacao extends CI_Controller {
     public function cadastrar() {
         $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
         $this->form_validation->set_rules('id_prova', 'id_prova', 'required');
-        $this->form_validation->set_rules('id_usuario', 'id_usuario', 'required');
         $this->form_validation->set_rules('pontos', 'pontos', 'required');
-        $this->form_validation->set_rules('data_hora', 'data_hora', 'required');
+        //Fuso Horario
+        date_default_timezone_set('America/Sao_Paulo');
         if ($this->form_validation->run() == false) {
             $this->cadastro();
         } else {
             $data = array(
                 'id_equipe' => $this->input->post('id_equipe'),
                 'id_prova' => $this->input->post('id_prova'),
-                'id_usuario' => $this->input->post('id_usuario'),
+                'id_usuario' => $this->session->userdata('idUsuario'), //Pega id automaticamente  pelo session
                 'pontos' => $this->input->post('pontos'),
-                'data_hora' => $this->input->post('data_hora')
+                'data_hora' => date('Y-m-d H:i:s')
             );
             if ($this->Pontuacao_model->insert($data)) {
                 $this->session->set_flashdata('mensagem', 'Pontuação cadastrado com sucesso! ! !');
@@ -77,29 +76,27 @@ class Pontuacao extends CI_Controller {
         if ($id > 0) {
             $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
             $this->form_validation->set_rules('id_prova', 'id_prova', 'required');
-            $this->form_validation->set_rules('id_usuario', 'id_usuario', 'required');
             $this->form_validation->set_rules('pontos', 'pontos', 'required');
-            $this->form_validation->set_rules('data_hora', 'data_hora', 'required');
+            date_default_timezone_set('America/Sao_Paulo');
             if ($this->form_validation->run() == false) {
                 $data['pontos'] = $this->Pontuacao_model->getId($id);
                 $data['equipe'] = $this->Equipe_model->getAll($id);
                 $data['prova'] = $this->Prova_model->getAll($id);
-                $data['usuario'] = $this->Usuario_model->getNome($id);
                 $this->load->view('pontuacao/alterar', $data);
             } else {
                 $data = array(
                     'id_equipe' => $this->input->post('id_equipe'),
                     'id_prova' => $this->input->post('id_prova'),
-                    'id_usuario' => $this->input->post('id_usuario'),
+                    'id_usuario' => $this->session->userdata('idUsuario'), //Pega id automaticamente  pelo session
                     'pontos' => $this->input->post('pontos'),
-                    'data_hora' => $this->input->post('data_hora')
+                    'data_hora' => date('Y-m-d H:i:s')
                 );
                 if ($this->Pontuacao_model->update($id, $data)) {
                     $this->session->set_flashdata('mensagem', 'Pontuação alterado com sucesso! ! !');
                     redirect('Pontuacao/index');
                 } else {
                     $this->session->set_flashdata('erro', 'Falha ao alterar Pontuação *_*');
-                    redirect('Pontuacao/alterar/'. $id);
+                    redirect('Pontuacao/alterar/' . $id);
                 }
             }
         } else {
