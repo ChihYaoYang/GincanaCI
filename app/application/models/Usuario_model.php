@@ -5,7 +5,7 @@
  * @author Yang
  */
 class Usuario_model extends CI_Model {
-
+    const password = 'ryanSENAC';
     const table = 'usuario';
     //GET_ID
     public function getId($id) {
@@ -28,6 +28,7 @@ class Usuario_model extends CI_Model {
     //Insert
     //Passa $data no conttroller como array
     public function insert($data = array()) {
+        $data['senha'] = sha1($data['senha'] . self::password);
         $this->db->insert(self::table, $data);
         return $this->db->affected_rows();
     }

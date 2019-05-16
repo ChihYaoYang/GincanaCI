@@ -12,6 +12,8 @@ class Pontuacao extends CI_Controller {
         $this->load->model('Equipe_model');
         $this->load->model('Prova_model');
         $this->Usuario_model->verificaLogin();
+        //Fuso Horario
+        date_default_timezone_set('America/Sao_Paulo');
     }
 
     public function index() {
@@ -34,8 +36,6 @@ class Pontuacao extends CI_Controller {
         $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
         $this->form_validation->set_rules('id_prova', 'id_prova', 'required');
         $this->form_validation->set_rules('pontos', 'pontos', 'required');
-        //Fuso Horario
-        date_default_timezone_set('America/Sao_Paulo');
         if ($this->form_validation->run() == false) {
             $this->cadastro();
         } else {
@@ -77,7 +77,6 @@ class Pontuacao extends CI_Controller {
             $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
             $this->form_validation->set_rules('id_prova', 'id_prova', 'required');
             $this->form_validation->set_rules('pontos', 'pontos', 'required');
-            date_default_timezone_set('America/Sao_Paulo');
             if ($this->form_validation->run() == false) {
                 $data['pontos'] = $this->Pontuacao_model->getId($id);
                 $data['equipe'] = $this->Equipe_model->getAll($id);

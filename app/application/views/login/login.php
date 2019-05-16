@@ -24,6 +24,7 @@
                         echo '<div class="alert alert-success" role="alert"><i class="fas fa-check"></i></i> ' . $mensagems . '</div>';
                     }
                     ?>
+                    <?php echo validation_errors() ?>
                     <form method="POST" action="" name="login">
                         <div>
                             <label for="email">E-mail:</label>

@@ -15,6 +15,7 @@
                 <a class="btn btn-light" href="<?= base_url() . 'Usuario/login' ?>">Voltar</a>
                 <h3 class="card-header bg-primary text-center">Register</h3>
                 <div class="card-body">
+                <?php echo validation_errors() ?>
                     <form method="POST" action="">
                     <div>
                             <label for="nome">UserName:</label>
@@ -22,7 +23,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-user"></i></div>
                                 </div>
-                                <input type="text"class="form-control" name="nome" id="nome">
+                                <input type="text"class="form-control" name="nome" id="nome" value="<?php echo set_value('nome') ?>">
                             </div>
                         </div>
 
@@ -34,7 +35,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                                 </div>
-                                <input type="email"class="form-control" name="email" id="email">
+                                <input type="email"class="form-control" name="email" id="email" value="<?php echo set_value('email') ?>">
                             </div>
                         </div>
 
