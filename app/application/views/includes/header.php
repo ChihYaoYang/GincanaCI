@@ -101,9 +101,8 @@
             </ul>
             <!---Campo User--->
             <ul class="navbar-nav justify-content-end">
-                <li class="nav-item text-light"><i class="fas fa-user username"></i> <?= $this->session->userdata('nome'); ?></li>
                 <li class="nav-item dropdown pull-left">
-                    <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown"></a>
+                    <a href="#" id="menuCliente" class="nav-link dropdown-toggle text-light" data-toggle="dropdown"><i class="fas fa-user username"></i> <?= $this->session->userdata('nome'); ?></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menuCliente">
                         <a class="dropdown-item" href="<?= base_url() . 'user/index' ?>"><i class="fas fa-user username"></i> Perfil de Usuário</a>
                         <div class="dropdown-divider"></div>
