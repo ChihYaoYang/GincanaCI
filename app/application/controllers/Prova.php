@@ -52,15 +52,11 @@ class Prova extends CI_Controller {
             );
             //Chama método e passa $data ja valida se teve linha affectados
             if ($this->Prova_model->insert($data)) {
-
                 //salva uma mensagem na sessão
-                $this->session->set_flashdata('mensagem', 'Prova cadastrado com sucesso! ! !');
-                //Se for true redireciona para lista
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Prova Cadastrado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 redirect('Prova/index');
             } else {
-                //salva uma mensagem na sessão
-                $this->session->set_flashdata('erro', 'Falha ao cadastrar Prova *_*');
-
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastrar Prova *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 //Se for false redireciona para cadastrar
                 redirect('Prova/cadastro');
             }
@@ -72,9 +68,9 @@ class Prova extends CI_Controller {
         //Valida
         if ($id > 0) {
             if ($this->Prova_model->delete($id)) {
-                $this->session->set_flashdata('mensagem', 'Prova deletado com sucesso ! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Prova Deletado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             } else {
-                $this->session->set_flashdata('erro', 'Falha ao deletar Prova *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Deletar Prova *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');   
             }
         }
         redirect('Prova/index');
@@ -105,10 +101,10 @@ class Prova extends CI_Controller {
                 );
                 //Chama método de update
                 if ($this->Prova_model->update($id, $data)) {
-                    $this->session->set_flashdata('mensagem', 'Prova alterado com sucesso ! ! !');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Prova Alterado com sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');          
                     redirect('Prova/index');
                 } else {
-                    $this->session->set_flashdata('erro', 'Falha ao alterar Prova *_*');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Alterar Prova *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Prova/alterar/' . $id);
                 }
             }

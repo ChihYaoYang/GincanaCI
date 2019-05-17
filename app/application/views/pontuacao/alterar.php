@@ -14,10 +14,8 @@
                     <?php echo validation_errors(); ?>
                     <form method="POST" action="">
                         <?php
-                        $erro = $this->session->flashdata('erro');
-                        if (isset($erro)) {
-                            echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
-                        }
+                        //Mensagem
+                        echo ($this->session->flashdata('mensagem')) ? $this->session->flashdata('mensagem') : '';
                         ?>
                         <input type="hidden" name="id" id="id" value="<?= (isset($pontos)) ? $pontos->id : ''; ?>">
                         <!----Nome da Equipe--->
@@ -41,7 +39,7 @@
                                     ?>
                                 </select>
                             </div>
-                        </div> 
+                        </div>
 
                         <!----Nome da Prova--->
                         <div>
@@ -64,7 +62,7 @@
                                     ?>
                                 </select>
                             </div>
-                        </div> 
+                        </div>
 
                         <!--Pontos---->
                         <div>
@@ -73,7 +71,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fab fa-bitcoin"></i></div>
                                 </div>
-                                <input type="text" class="form-control" id="pontos" name="pontos" value="<?= (isset($pontos)) ? $pontos->pontos : ''; ?>"> 
+                                <input type="text" class="form-control" id="pontos" name="pontos" value="<?= (isset($pontos)) ? $pontos->pontos : ''; ?>">
                             </div>
                         </div>
                         <br>

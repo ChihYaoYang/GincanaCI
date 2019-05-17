@@ -47,10 +47,10 @@ class Pontuacao extends CI_Controller {
                 'data_hora' => date('Y-m-d H:i:s')
             );
             if ($this->Pontuacao_model->insert($data)) {
-                $this->session->set_flashdata('mensagem', 'Pontuação cadastrado com sucesso! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Pontuação Cadastrado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 redirect('Pontuacao/index');
             } else {
-                $this->session->set_flashdata('erro', 'Falha ao cadastrar Pontuação *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastrar Pontuação *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 redirect('Pontuacao/cadastro');
             }
         }
@@ -61,9 +61,9 @@ class Pontuacao extends CI_Controller {
         //Valida 
         if ($id > 0) {
             if ($this->Pontuacao_model->delete($id)) {
-                $this->session->set_flashdata('mensagem', 'Pontuação deletado com sucesso! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Pontuação Deletado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             } else {
-                $this->session->set_flashdata('erro', 'Falha ao deletar Pontuação *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Deletar Pontuação *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             }
         }
         redirect('Pontuacao/index');
@@ -91,10 +91,10 @@ class Pontuacao extends CI_Controller {
                     'data_hora' => date('Y-m-d H:i:s')
                 );
                 if ($this->Pontuacao_model->update($id, $data)) {
-                    $this->session->set_flashdata('mensagem', 'Pontuação alterado com sucesso! ! !');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Pontuação Alterado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Pontuacao/index');
                 } else {
-                    $this->session->set_flashdata('erro', 'Falha ao alterar Pontuação *_*');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Alterar Pontuação *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Pontuacao/alterar/' . $id);
                 }
             }

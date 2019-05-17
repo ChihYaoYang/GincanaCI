@@ -15,22 +15,18 @@
                         <?php echo validation_errors(); ?>
                         <form method="POST" action="">
                             <?php
-                            $erro = $this->session->flashdata('erro');
-                            if (isset($erro)) {
-                                echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
-                            }
+                            //Mensagem
+                            echo ($this->session->flashdata('mensagem')) ? $this->session->flashdata('mensagem') : '';
                             ?>
                             <!--$data['prova'] controller-->
-                            <input type="hidden" name="id" id="id"
-                                   value="<?= (isset($prova)) ? $prova->id : ''; ?>">
+                            <input type="hidden" name="id" id="id" value="<?= (isset($prova)) ? $prova->id : ''; ?>">
                             <div>
                                 <label for="nome">Nome:</label>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="nome" name="nome"
-                                           value="<?= (isset($prova)) ? $prova->nome : ''; ?>">
+                                    <input type="text" class="form-control" id="nome" name="nome" value="<?= (isset($prova)) ? $prova->nome : ''; ?>">
                                 </div>
                             </div>
 
@@ -40,8 +36,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-clock"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="tempo" name="tempo"
-                                           value="<?= (isset($prova)) ? $prova->tempo : ''; ?>">
+                                    <input type="text" class="form-control" id="tempo" name="tempo" value="<?= (isset($prova)) ? $prova->tempo : ''; ?>">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">h</div>
                                     </div>
@@ -54,8 +49,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-file-alt"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="descricao" name="descricao"
-                                           value="<?= (isset($prova)) ? $prova->descricao : ''; ?>">
+                                    <input type="text" class="form-control" id="descricao" name="descricao" value="<?= (isset($prova)) ? $prova->descricao : ''; ?>">
                                 </div>
                             </div>
 
@@ -66,9 +60,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-users"></i></div>
                                     </div>
-                                    <input type="text" class="form-control" id="NumIntegrantes"
-                                           name="NumIntegrantes"
-                                           value="<?= (isset($prova)) ? $prova->NumIntegrantes : ''; ?>">
+                                    <input type="text" class="form-control" id="NumIntegrantes" name="NumIntegrantes" value="<?= (isset($prova)) ? $prova->NumIntegrantes : ''; ?>">
                                 </div>
                             </div>
 

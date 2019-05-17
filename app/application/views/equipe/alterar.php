@@ -14,10 +14,8 @@
                     <?php echo validation_errors(); ?>
                     <form method="POST" action="" enctype="multipart/form-data">
                         <?php
-                        $erro = $this->session->flashdata('erro');
-                        if (isset($erro)) {
-                            echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
-                        }
+                        //Mensagem
+                        echo ($this->session->flashdata('mensagem')) ? $this->session->flashdata('mensagem') : '';
                         ?>
 
                         <input type="hidden" name="id" id="id" value="<?= isset($equipe) ? $equipe->id : ''; ?>">
@@ -27,7 +25,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fas fa-users"></i></div>
                                 </div>
-                                <input type="text"class="form-control" name="nome" id="nome" value="<?= isset($equipe) ? $equipe->nome : ''; ?>">
+                                <input type="text" class="form-control" name="nome" id="nome" value="<?= isset($equipe) ? $equipe->nome : ''; ?>">
                             </div>
                         </div>
 
@@ -35,13 +33,14 @@
                         <div class="custom-file">
                             <label class="custom-file-label" for="image">Escolha arquivo</label>
                             <input type="file" class="custom-file-input" id="imagem" name="imagem" accept="image/jpg, image/jpeg, image/png">
+                            <br><br>
                             <?php
                             if (!empty($equipe->imagem) && file_exists('public/uploads/' . $equipe->imagem)) {
                                 echo '<img src="' . base_url('public/uploads/' . $equipe->imagem) . '" width="100" height="100">';
                             }
                             ?>
                         </div>
-
+                        <br><br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Enviar</button>
                         </div>

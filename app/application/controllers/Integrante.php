@@ -50,11 +50,11 @@ class Integrante extends CI_Controller {
                 'cpf' => $this->input->post('cpf')
             );
             if ($this->Integrante_model->insert($data)) {
-                $this->session->set_flashdata('mensagem', 'Integrante cadastrado com sucesso! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Integrante Cadastrado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 redirect('Integrante/index');
             } else {
                 //salva uma mensagem na sessão
-                $this->session->set_flashdata('erro', 'Falha ao cadastrar integrante *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastrar Integrante *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 //Se for false redireciona para cadastrar
                 redirect('Integrante/cadastro');
             }
@@ -66,9 +66,9 @@ class Integrante extends CI_Controller {
         //Valida
         if ($id > 0) {
             if ($this->Integrante_model->delete($id)) {
-                $this->session->set_flashdata('mensagem', 'Integrante deletado com sucesso! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Integrante Deletado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             } else {
-                $this->session->set_flashdata('erro', 'Falha ao deletar integrante *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Deletar Integrante *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             }
         }
         redirect('Integrante/index');
@@ -100,10 +100,10 @@ class Integrante extends CI_Controller {
                     'cpf' => $this->input->post('cpf')
                 );
                 if ($this->Integrante_model->update($id, $data)) {
-                    $this->session->set_flashdata('mensagem', 'Integrante alterado com sucesso! ! !');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Integrante Alterado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Integrante/index');
                 } else {
-                    $this->session->set_flashdata('erro', 'Falha ao alterar integrante *_*');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Alterar Integrante *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Integrante/alterar/'. $id);
                 }
             }

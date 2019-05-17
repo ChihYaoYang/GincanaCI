@@ -37,10 +37,10 @@ class User extends CI_Controller {
                 );
                 //Chama método de update
                 if ($this->User_model->update($id, $data)) {
-                    $this->session->set_flashdata('mensagem', 'Usuário alterado com sucesso ! ! !');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Usuário Alterado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('User/index');
                 } else {
-                    $this->session->set_flashdata('erro', 'Falha ao alterar Usuário *_*');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Alterar Usuário *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('User/alterar/' . $id);
                 }
             }
@@ -55,10 +55,10 @@ class User extends CI_Controller {
         //Valida
         if ($id > 0) {
             if ($this->User_model->delete($id)) {
-                $this->session->set_flashdata('mensagem', 'Usuário Deletado com sucesso ! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Usuário Deletado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 $this->session->sess_destroy();
             } else {
-                $this->session->set_flashdata('erro', 'Falha ao deletar Usuário *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Deletar Usuário *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             }
         }
         redirect('user/index');

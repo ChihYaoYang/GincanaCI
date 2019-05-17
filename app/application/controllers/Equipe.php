@@ -47,7 +47,7 @@ class Equipe extends CI_Controller {
                 $config['encrypt_name'] = true;
                 $this->load->library('upload', $config);
                 if (!$this->upload->do_upload('imagem')) {
-                    $this->session->set_flashdata('erro', 'Erro ao cadastrar imagem *_*' . $this->upload->display_errors());
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastra Imagem*_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>' . $this->upload->display_errors());
                     redirect('Equipe/cadastrar');
                     exit();
                 } else {
@@ -56,11 +56,11 @@ class Equipe extends CI_Controller {
             }
             //Chama método e passa $data ja valida se teve linha affectados
             if ($this->Equipe_model->insert($data)) {
-                $this->session->set_flashdata('mensagem', 'Equipe cadastrado com sucesso! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Equipe Cadastrado com Sucesso! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 redirect('Equipe/index');
             } else {
                 unlink('public/uploads/' . $data['imagem']);
-                $this->session->set_flashdata('erro', 'Falha ao cadastra *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastra Equipe*_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                 redirect('Equipe/cadastro');
             }
         }
@@ -73,9 +73,9 @@ class Equipe extends CI_Controller {
         if ($id > 0) {
             if ($this->Equipe_model->delete($id)) {
                 unlink('public/uploads/' . $get->imagem);
-                $this->session->set_flashdata('mensagem', 'Equipe Deletado com sucesso ! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Equipe Deletado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             } else {
-                $this->session->set_flashdata('erro', 'Falha ao deletar equipe *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Deletar Equipe *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             }
         }
         redirect('Equipe/index');
@@ -104,7 +104,7 @@ class Equipe extends CI_Controller {
                     $config['encrypt_name'] = true;
                     $this->load->library('upload', $config);
                     if (!$this->upload->do_upload('imagem')) {
-                        $this->session->set_flashdata('erro', 'Erro ao cadastrar imagem *_*' . $this->upload->display_errors());
+                        $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastra Imagem*_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>' . $this->upload->display_errors());
                         redirect('Equipe/alterar');
                         exit();
                     } else {
@@ -118,10 +118,11 @@ class Equipe extends CI_Controller {
                 }
 
                 if ($this->Equipe_model->update($id, $data)) {
-                    $this->session->set_flashdata('mensagem', 'Equipe alterado com sucesso ! ! !');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Equipe Alterado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Equipe/index');
                 } else {
-                    $this->session->set_flashdata('erro', 'Falha ao altera equipe *_*');
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Altera Equipe *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
+            
                     redirect('Equipe/alterar/' . $id);
                 }
             }

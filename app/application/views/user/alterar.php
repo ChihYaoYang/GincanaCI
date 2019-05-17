@@ -15,10 +15,8 @@
                         <?php echo validation_errors(); ?>
                         <form method="POST" action="">
                             <?php
-                            $erro = $this->session->flashdata('erro');
-                            if (isset($erro)) {
-                                echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
-                            }
+                            //Mensagem
+                            echo ($this->session->flashdata('mensagem')) ? $this->session->flashdata('mensagem') : '';
                             ?>
                             <!--$data['prova'] controller-->
                             <input type="hidden" name="id" id="id" value="">
@@ -29,7 +27,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-users"></i></div>
                                     </div>
-                                    <input type="text"class="form-control" name="nome" id="nome" value="<?= isset($user) ? $user->nome : ''; ?>">
+                                    <input type="text" class="form-control" name="nome" id="nome" value="<?= isset($user) ? $user->nome : ''; ?>">
                                 </div>
                             </div>
 
@@ -39,7 +37,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                                     </div>
-                                    <input type="password"class="form-control" name="senha" id="senha" value="">
+                                    <input type="password" class="form-control" name="senha" id="senha" value="">
                                 </div>
                             </div>
 

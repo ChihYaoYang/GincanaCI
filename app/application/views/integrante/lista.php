@@ -10,14 +10,7 @@
             <h3 class="card-header bg-transparent"><i class="fas fa-list-alt"></i>Integrante da Lista</h3>
             <?php
             //Mensagem
-            $mensagem = $this->session->flashdata('mensagem');
-            if (isset($mensagem)) {
-                echo '<div class="alert alert-success"> <i class="fas fa-check"></i> ' . $mensagem . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
-            }
-            $erro = $this->session->flashdata('erro');
-            if (isset($erro)) {
-                echo '<div class="alert alert-danger" role="alert"><i class="fas fa-times"></i> ' . $erro . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>' . '</div>';
-            }
+            echo ($this->session->flashdata('mensagem')) ? $this->session->flashdata('mensagem') : '';
             ?>
             <div class="table-responsive">
                 <table class="table table-dark table-bordered">
@@ -42,8 +35,8 @@
                                 echo '<td>' . $integ->rg . '</td>';
                                 echo '<td>' . $integ->cpf . '</td>';
                                 echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2" href="' . base_url() . 'Integrante/deletar/' . $integ->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
-                                '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Integrante/alterar/' . $integ->id . '"><i class="fas fa-edit"></i> Alterar</a>'
-                                . '</td>';
+                                    '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Integrante/alterar/' . $integ->id . '"><i class="fas fa-edit"></i> Alterar</a>'
+                                    . '</td>';
                                 echo '</tr>';
                             }
                         } else {

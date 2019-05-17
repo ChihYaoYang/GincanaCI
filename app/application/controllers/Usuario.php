@@ -43,7 +43,7 @@ class Usuario extends CI_Controller {
                 //abre a pagina principal do sistema
                 redirect(base_url());
             } else {
-                $this->session->set_flashdata('mensagem', 'Usuário e senha incorretos *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Usuário e Senha Incorretos *_*</div>');
                 //redireciona obrigando o login...
                 redirect(base_url() . 'Usuario/login');
             }
@@ -66,10 +66,10 @@ class Usuario extends CI_Controller {
             );
             //Chama método e passa $data ja valida se teve linha affectados
             if ($this->Usuario_model->insert($data)) {
-                $this->session->set_flashdata('mensagems', ' Cadastrado com sucesso! ! !');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Cadastrado com Sucesso ! ! !</div>');
                 redirect('Usuario/login');
             } else {
-                $this->session->set_flashdata('erro', ' Falha ao cadastrar *_*');
+                $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Cadastrar *_*</div>');
                 redirect('Usuario/cadastrar');
             }
         }
