@@ -12,7 +12,7 @@
                 <h3 class="card-header bg-transparent"><i class="fas fa-edit"></i>Formulário de Equipe</h3>
                 <div class="card-body">
                     <?php echo validation_errors(); ?>
-                    <form method="POST" action="">
+                    <form method="POST" action="" enctype="multipart/form-data">
                         <?php
                         $mensagem = $this->session->flashdata('mensagem');
                         if (isset($mensagem)) {
@@ -33,6 +33,13 @@
                                 <input type="text"class="form-control" name="nome" id="nome" value="<?php echo set_value('nome') ?>">
                             </div>
                         </div>
+                      
+                        <!---Campo file--->
+                        <div class="custom-file">
+                            <label class="custom-file-label" for="image">Escolha arquivo</label>
+                            <input type="file" class="custom-file-input" id="imagem" name="imagem" accept="image/jpg, image/jpeg, image/png">
+                        </div>
+                        <br><br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Enviar</button>
                             <button type="reset" class="btn btn-primary"><i class="fas fa-redo"></i> Limpar</button>

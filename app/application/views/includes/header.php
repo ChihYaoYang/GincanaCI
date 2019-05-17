@@ -47,10 +47,6 @@
             border: 1px solid white;
             border-radius: 15%;
         }
-
-        .nav-link {
-            padding: 0px;
-        }
     </style>
     <!---Menu--->
     <nav class="navbar navbar-dark bg-dark navbar-expand-md">
