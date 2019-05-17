@@ -121,17 +121,12 @@ class Equipe extends CI_Controller {
                     $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Equipe Alterado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
                     redirect('Equipe/index');
                 } else {
-                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Altera Equipe *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
-            
-                    redirect('Equipe/alterar/' . $id);
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Equipe não sofreu Alterações<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
+                    redirect('Equipe/index');
                 }
             }
-        } else {
-            redirect('Equipe/index');
         }
         $this->load->view('includes/footer');
     }
 
 }
-
-?>

@@ -104,14 +104,11 @@ class Prova extends CI_Controller {
                     $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Prova Alterado com sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');          
                     redirect('Prova/index');
                 } else {
-                    $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Alterar Prova *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
-                    redirect('Prova/alterar/' . $id);
+                    $this->session->set_flashdata('mensagem', '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Prova não sofreu Alterações<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
+                    redirect('Prova/index');
                 }
             }
-        } else {
-            redirect('Prova/index');
-        }
+        } 
         $this->load->view('includes/footer');
     }
 }
-?>
