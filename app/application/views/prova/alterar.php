@@ -37,9 +37,6 @@
                                         <div class="input-group-text"><i class="fas fa-clock"></i></div>
                                     </div>
                                     <input type="text" class="form-control" id="tempo" name="tempo" value="<?= (isset($prova)) ? $prova->tempo : ''; ?>">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">h</div>
-                                    </div>
                                 </div>
                             </div>
 

@@ -29,7 +29,7 @@ class Equipe extends CI_Controller {
 
     public function cadastrar() {
         //Valida formulario
-        $this->form_validation->set_rules('nome', 'nome', 'required');
+        $this->form_validation->set_rules('nome', 'nome', 'required|is_unique[equipe.nome]|max_length[30]');
         if ($this->form_validation->run() == false) {
             //Se for false recarrega página
             $this->cadastro();

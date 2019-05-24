@@ -34,10 +34,10 @@ class Prova extends CI_Controller {
 
     public function cadastrar() {
         //Regra da validation
-        $this->form_validation->set_rules('nome', 'nome', 'required');
-        $this->form_validation->set_rules('tempo', 'tempo', 'required');
-        $this->form_validation->set_rules('descricao', 'descricao', 'required');
-        $this->form_validation->set_rules('NumIntegrantes', 'NumIntegrantes', 'required');
+        $this->form_validation->set_rules('nome', 'nome', 'required|is_unique[prova.nome]|max_length[250]');
+        $this->form_validation->set_rules('tempo', 'tempo', 'required|numeric|min_length[2]|max_length[10]');
+        $this->form_validation->set_rules('descricao', 'descricao', 'required|max_length[250]');
+        $this->form_validation->set_rules('NumIntegrantes', 'NumIntegrantes', 'required|numeric|max_length[20]');
         //validar os campo se foram preenchido
         if ($this->form_validation->run() == false) {
             //Se for false chama Form de novo

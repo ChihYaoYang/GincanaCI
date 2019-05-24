@@ -33,10 +33,10 @@ class Integrante extends CI_Controller {
     public function cadastrar() {
         //Valida formulario
         $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
-        $this->form_validation->set_rules('nome', 'nome', 'required');
+        $this->form_validation->set_rules('nome', 'nome', 'required|max_length[50]');
         $this->form_validation->set_rules('data_nasc', 'data_nasc', 'required');
-        $this->form_validation->set_rules('rg', 'rg', 'required');
-        $this->form_validation->set_rules('cpf', 'cpf', 'required');
+        $this->form_validation->set_rules('rg', 'rg', 'required|min_length[8]|max_length[25]');
+        $this->form_validation->set_rules('cpf', 'cpf', 'required|min_length[14]|max_length[25]');
         if ($this->form_validation->run() == false) {
             //Se for false chama Form de novo
             $this->cadastro();
