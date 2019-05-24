@@ -9,7 +9,7 @@
         <div class="col">
             <h3 class="card-header bg-transparent"><i class="fas fa-flag-checkered"></i>Rank</h3>
             <div class="table-responsive">
-                <table class="table table-dark table-bordered">
+                <table class="table table-dark table-bordered semdatable">
                     <thead>
                         <tr class="text-center">
                             <th scope="col">Posição</th>

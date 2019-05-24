@@ -23,7 +23,7 @@
                 <?php echo validation_errors() ?>
                 <form method="POST" action="" name="login">
                     <div>
-                        <label for="email">E-mail:</label>
+                        <label for="email">E-mail or Username:</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-envelope"></i></div>
@@ -42,7 +42,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a class="btn btn-secondary" href="<?= base_url() . 'Usuario/cadastrar' ?>">Register</a>
+                        <a class="btn btn-secondary mr-2" href="<?= base_url() . 'Usuario/cadastrar' ?>">Register</a>
+                        <a class="btn btn-primary" href="<?= base_url() . 'Recupera/index' ?>">Recuperar a senha</a>
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">

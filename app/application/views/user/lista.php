@@ -16,7 +16,7 @@
                     echo ($this->session->flashdata('mensagem')) ? $this->session->flashdata('mensagem') : '';
                     ?>
                     <div class="table-responsive">
-                        <table class="table table-dark table-bordered">
+                        <table class="table table-dark table-bordered semdatable">
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col">Nome</th>
