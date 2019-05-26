@@ -23,7 +23,7 @@ class User extends CI_Controller {
         $this->load->view('includes/header');
         if ($id > 0) {
             //Validation form
-            $this->form_validation->set_rules('nome', 'nome', 'required|is_unique[usuario.nome]|max_length[50]');
+            $this->form_validation->set_rules('nome', 'nome', 'required|max_length[50]');
             $this->form_validation->set_rules('senha', 'senha', 'required|min_length[6]|max_length[20]');
             if ($this->form_validation->run() == false) {
                 $data['user'] = $this->User_model->getId($id);

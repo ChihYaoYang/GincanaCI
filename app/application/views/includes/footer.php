@@ -4,6 +4,7 @@
         -moz-transform: scale(1.1);
         -o-transform: scale(1.1);
     }
+
     .social {
         -webkit-transform: scale(0.8);
         /* Browser Variations: */
@@ -13,19 +14,24 @@
         -moz-transition-duration: 0.5s;
         -o-transition-duration: 0.5s;
     }
+
     /*houver*/
     #social-git:hover {
         color: #535c68;
     }
+
     #social-tw:hover {
         color: #4834d4;
     }
+
     #social-gp:hover {
         color: #d34836;
     }
+
     #social-em:hover {
         color: #f39c12;
     }
+
     .container {
         width: auto;
         max-width: auto;
@@ -52,7 +58,7 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <!----JS--->
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('table:not(.semdatable)').DataTable({
             "language": {
                 "sEmptyTable": "Nenhum registro encontrado",
@@ -74,7 +80,15 @@
                 },
             }
         });
+        $('.confirm').click(function() {
+            if (confirm('Você tem certeza que deseja deletar ?')) {
+                return true;
+            } else {
+                return false;
+            }
+        });
     });
 </script>
 </body>
+
 </html>
