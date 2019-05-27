@@ -34,7 +34,7 @@
                                 echo '<td>' . $ponto->nome_usuario . '</td>';
                                 echo '<td>' . $ponto->pontos . '</td>';
                                 echo '<td>' . $ponto->data_hora . '</td>';
-                                echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2 confirm" href="' . base_url() . 'Pontuacao/deletar/' . $ponto->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
+                                echo '<td class="text-right">' . '<a class="btn btn-sm btn-outline-danger mr-2 delete" href="' . base_url() . 'Pontuacao/deletar/' . $ponto->id . '"><i class="fas fa-trash-alt"></i> Delete</a>' .
                                     '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Pontuacao/alterar/' . $ponto->id . '"><i class="fas fa-edit"></i> Alterar</a>'
                                     . '</td>';
                                 echo '</tr>';

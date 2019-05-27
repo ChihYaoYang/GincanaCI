@@ -35,7 +35,7 @@
                                 //método
                                 echo '<td class="text-right">';
                                 if ($dado->prova < 1) {
-                                    echo '<a class="btn btn-sm btn-outline-danger mr-2" onclick="teste(' . base_url('Prova/deletar/' . $dado->id) . ')" ><i class="fas fa-trash-alt"></i> Delete</a>';
+                                    echo '<a class="btn btn-sm btn-outline-danger mr-2 delete" href="' . base_url('Prova/deletar/' . $dado->id) . '" ><i class="fas fa-trash-alt"></i> Delete</a>';
                                 }
                                 echo '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Prova/alterar/' . $dado->id . '"><i class="fas fa-edit"></i> Alterar</a>' . '</td>';
                                 echo '</tr>';
@@ -52,5 +52,3 @@
         </div>
     </div>
 </div>
-
-<a class="btn btn-sm btn-outline-danger mr-2" onclick="teste('<?php echo base_url('Prova/deletar/' . $dado->id); ?>')"><i class="fas fa-trash-alt"></i> Delete</a>

@@ -84,7 +84,9 @@
         });
     });
 
-    function teste(url) {
+    $('.delete').on('click',function(e){
+        e.preventDefault();
+        let url = $(this).attr('href');
         $.confirm({
             title: 'Aviso !',
             content: 'Você realmente deseja excluir ?',
@@ -102,7 +104,7 @@
                 }
             }
         });
-    }
+    });
 </script>
 </body>
 

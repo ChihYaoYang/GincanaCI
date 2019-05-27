@@ -34,7 +34,7 @@
                                 echo '<td>' . $e->nome . '</td>';
                                 echo '<td class="text-right">';
                                 if ($e->equipe < 1) {
-                                    echo '<a class="btn btn-sm btn-outline-danger mr-2 confirm" href="' . base_url() . 'Equipe/deletar/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>';
+                                    echo '<a class="btn btn-sm btn-outline-danger mr-2 delete" href="' . base_url() . 'Equipe/deletar/' . $e->id . '"><i class="fas fa-trash-alt"></i> Delete</a>';
                                 }
                                 echo '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Equipe/alterar/' . $e->id . '"><i class="fas fa-edit"></i> Alterar</a>' . '</td>';
                                 echo '</tr>';
