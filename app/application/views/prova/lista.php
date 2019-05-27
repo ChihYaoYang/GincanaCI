@@ -35,13 +35,15 @@
                                 //método
                                 echo '<td class="text-right">';
                                 if ($dado->prova < 1) {
-                                    echo '<a class="btn btn-sm btn-outline-danger mr-2 confirm" href="' . base_url() . 'Prova/deletar/' . $dado->id . '"><i class="fas fa-trash-alt"></i> Delete</a>';
+                                    echo '<a class="btn btn-sm btn-outline-danger mr-2" onclick="teste(' . base_url('Prova/deletar/' . $dado->id) . ')" ><i class="fas fa-trash-alt"></i> Delete</a>';
                                 }
                                 echo '<a class="btn btn-sm btn-outline-warning" href="' . base_url() . 'Prova/alterar/' . $dado->id . '"><i class="fas fa-edit"></i> Alterar</a>' . '</td>';
                                 echo '</tr>';
                             }
                         } else {
-                            echo '<tr><td colspan="5">Nenhum Prova cadastrado</td></tr>';
+                            echo '<tr>
+                            <td colspan="5">Nenhum Prova cadastrado</td>
+                        </tr>';
                         }
                         ?>
                     </tbody>
@@ -50,3 +52,5 @@
         </div>
     </div>
 </div>
+
+<a class="btn btn-sm btn-outline-danger mr-2" onclick="teste('<?php echo base_url('Prova/deletar/' . $dado->id); ?>')"><i class="fas fa-trash-alt"></i> Delete</a>
