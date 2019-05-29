@@ -60,6 +60,7 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <!----JS--->
 <script>
+    //Datatables
     $(document).ready(function() {
         $('table:not(.semdatable)').DataTable({
             "language": {
@@ -83,8 +84,8 @@
             }
         });
     });
-
-    $('.delete').on('click',function(e){
+    //Confirmation
+    $('.delete').on('click', function(e) {
         e.preventDefault();
         let url = $(this).attr('href');
         $.confirm({
@@ -102,6 +103,24 @@
                 cancel: function() {
                     $.alert('Processo cancelado !');
                 }
+            }
+        });
+    });
+    //Pré Visualizar
+    $(function() {
+        $("#imagem").change(function() {
+            // 若有選取檔案
+            if (this.files && this.files[0]) {
+                //Cria variável, Usa função FileReader(檔案讀取器) 來讀取使用者選取電腦中的檔案
+                var reader = new FileReader();
+                // 當讀取成功後會觸發的事情
+                reader.onload = function(e) {
+                    //e.target.result 物件，是使用者的檔案被 FileReader 轉換成 base64 的字串格式，
+                    // 在這裡我們選取圖檔，所以轉換出來的，會是如 『data:image/jpeg;base64,.....』這樣的字串樣式。
+                    $('#view').attr('src', e.target.result);
+                };
+                //讀取檔案
+                reader.readAsDataURL(this.files[0]);
             }
         });
     });

@@ -72,7 +72,7 @@ class Equipe extends CI_Controller {
         //Valida
         if ($id > 0) {
             if ($this->Equipe_model->delete($id)) {
-                unlink('public/uploads/' . $get->imagem);
+                unlink('./public/uploads/' . $get->imagem);
                 $this->session->set_flashdata('mensagem', '<div class="alert alert-success"><i class="fas fa-check"></i> Equipe Deletado com Sucesso ! ! !<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');
             } else {
                 $this->session->set_flashdata('mensagem', '<div class="alert alert-danger"><i class="fas fa-times"></i> Erro ao Deletar Equipe *_*<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>');

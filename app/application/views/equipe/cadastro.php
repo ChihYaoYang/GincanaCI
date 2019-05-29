@@ -33,7 +33,8 @@
                             <label class="custom-file-label" for="image">Escolha arquivo</label>
                             <input type="file" class="custom-file-input" id="imagem" name="imagem" accept="image/jpg, image/jpeg, image/png">
                         </div>
-                        <br><br>
+                        <hr>
+                        <img src="" id="view" name="imagemns" width="100" style="max-height:100px" /> <br><br>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Enviar</button>
                             <button type="reset" class="btn btn-primary"><i class="fas fa-redo"></i> Limpar</button>
